@@ -141,3 +141,498 @@ public class 검증수_2475 {
     }
 }
 ```
+---
+## A+B - 2 (2558번)
+### 사전지식
+ - StringTokenizer 사용법
+
+### 풀이방법
+ - StringTokenizer로 문자를 받아와 각각 Integer.valueOf 메소드로 형변환
+ - 형변환 된 데이터를 더한 후 출력
+```java
+package Bronze_5;
+
+import java.io.*;
+
+public class A_plus_B_2_2558 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int A = Integer.valueOf(br.readLine());
+        int B = Integer.valueOf(br.readLine());
+
+        System.out.println(A+B);
+    }
+}
+
+```
+---
+## 파티가 끝나고 난 뒤 (2845번)
+### 사전지식
+ - StringTokenizer 사용법
+ - 반복문
+
+### 주의사항
+ - 예제를 보면 뉴스 기사에 실려있는 참가자의 수에서 실제 참가자의 수를 빼야함을 알 수 있음
+
+### 풀이방법
+ - StringTokenizer로 문자열을 잘라서 변수에 저장
+ - `1m^2`에 있는 사람(`L`)과 파티가 열린 곳의 넓이 `P`가 주어졌으므로 `L*P`는 전체 참가자 수
+ - 반복문을 통해 신문 기사에 실려있는 참가자의 수와 실제 참가한 수를 빼서 출력
+```java
+package Bronze_5;
+
+import java.io.*;
+import java.util.*;
+
+public class 파티가_끝나고_난_뒤_2845 {
+    private static final int NEWS_COUNT = 5;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        StringTokenizer st = new StringTokenizer(str);
+        int L = Integer.valueOf(st.nextToken());
+        int P = Integer.valueOf(st.nextToken());
+        int peopleCount = L * P;
+
+        str = br.readLine();
+        st = new StringTokenizer(str);
+        for(int i=0; i<NEWS_COUNT; i++){
+            System.out.print(Integer.valueOf(st.nextToken()) - peopleCount + " ");
+        }
+    }
+}
+```
+---
+## 저작권 (2914번)
+### 주의사항
+ - 항상 올린다고 하였으므로 예제 1번에서 `38 24`일 때 평균값 24는 `평균값>23 또는 평균값<=24`가 되어야 함
+ - 따라서 `앨범에 수록된 곡의 개수`와 `평균값-1`을 곱한 후 +1을 해주어야 적어도 몇 곡이 저작권에 걸리는지 알 수 있음.
+
+### 풀이방법
+ - `앨범에 수록된 곡의 개수`와 `평균값`을 곱한 후 +1
+```java
+package Bronze_5;
+
+import java.io.*;
+import java.util.*;
+
+public class 저작권_2914 {
+    // 항상 올려서 정수로 계산함
+    // 예제 1번에서 38 24 일 때,
+    // 평균값이 24가 되려면 평균값>23 또는 평균값<=24가 되어야 함
+    // 따라서 23일때 38을 곱한 후 +1을 해주어야 위 범위에 들어가게 됨
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        StringTokenizer st = new StringTokenizer(str);
+        int A = Integer.valueOf(st.nextToken());
+        int I = Integer.valueOf(st.nextToken());
+
+        System.out.println(A*(I - 1)+1);
+    }
+}
+```
+## 킹, 퀸, 룩, 비숍, 나이트, 폰 (3003번)
+### 풀이방법
+ - 각 피스의 개수를 배열로 잡고 입력값에서 뺌
+```java
+package Bronze_5;
+
+import java.util.*;
+import java.io.*;
+
+public class 킹_퀸_룩_비숍_나이트_폰_3003 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        StringTokenizer st = new StringTokenizer(str);
+        int[] chess = {1, 1, 2, 2, 2, 8};
+
+        for(int i=0; i<6; i++) {
+            System.out.print(chess[i] - Integer.valueOf(st.nextToken()) + " ");
+        }
+    }
+}
+```
+## R2 (3046번)
+### 풀이방법
+ - S = (R1 + R2) / 2
+   R2 = S * 2 - R1
+   
+```java
+package Bronze_5;
+
+import java.util.*;
+import java.io.*;
+
+public class R2_3046 {
+    // S = (R1 + R2) / 2
+    // R2 = S * 2 - R1
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        StringTokenizer st = new StringTokenizer(str);
+        int R1 = Integer.valueOf(st.nextToken());
+        int S = Integer.valueOf(st.nextToken());
+
+        System.out.println(S * 2 - R1);
+    }
+}
+```
+## 웰컴 (5337번)
+### 풀이방법
+ - 역슬래쉬 (\) 표현 시 \\로 대체해주어야 함
+```java
+package Bronze_5;
+
+public class 웰컴_5337 {
+    public static void main(String[] args) {
+        System.out.println(".  .   .");
+        System.out.println("|  | _ | _. _ ._ _  _");
+        System.out.println("|/\\|(/.|(_.(_)[ | )(/.");
+    }
+}
+```
+---
+## 마이크로소프트 로고 (5338번)
+### 풀이방법
+```java
+package Bronze_5;
+
+public class 마이크로소프트_로고_5338 {
+  public static void main(String[] args) {
+    System.out.println("       _.-;;-._\n" +
+            "'-..-'|   ||   |\n" +
+            "'-..-'|_.-;;-._|\n" +
+            "'-..-'|   ||   |\n" +
+            "'-..-'|_.-''-._|");
+  }
+}
+```
+---
+## 콜센터 (5339번)
+### 풀이방법
+```java
+package Bronze_5;
+
+public class 콜센터_5339 {
+    public static void main(String[] args) {
+        System.out.println("     /~\\\n" +
+                "    ( oo|\n" +
+                "    _\\=/_\n" +
+                "   /  _  \\\n" +
+                "  //|/.\\|\\\\\n" +
+                " ||  \\ /  ||\n" +
+                "============\n" +
+                "|          |\n" +
+                "|          |\n" +
+                "|          |");
+    }
+}
+```
+---
+## 카드 게임 (5522번)
+### 풀이방법
+```java
+package Bronze_5;
+
+import java.io.*;
+
+public class 카드_게임_5522 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        long sum = 0;
+
+        for(int i=0; i<5; i++){
+            sum += Long.valueOf(br.readLine());
+        }
+        System.out.println(sum);
+    }
+}
+```
+---
+## 심부름 가는 길 (5554번)
+### 풀이방법
+ - 모든 초를 더한 후 `분(x)`는 `초/60`, `초(y)`는 `초%60`
+```java
+package Bronze_5;
+
+import java.io.*;
+
+public class 심부름_가는_길_5554 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int totalSeconds = 0;
+        for(int i=0; i<4; i++){
+            totalSeconds += Integer.valueOf(br.readLine());
+        }
+        System.out.println(totalSeconds/60 + "\n" + totalSeconds%60);
+    }
+}
+```
+---
+## Next in line (6749번)
+### 풀이방법
+```java
+package Bronze_5;
+
+import java.io.*;
+
+public class Next_in_line_6749 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int youngest = Integer.valueOf(br.readLine());
+        int middle = Integer.valueOf(br.readLine());
+
+        System.out.println(middle + (middle-youngest));
+    }
+}
+```
+---
+## Plane (8370번)
+### 풀이방법
+```java
+package Bronze_5;
+
+import java.io.*;
+import java.util.*;
+
+public class Plane {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        StringTokenizer st = new StringTokenizer(str);
+
+        int businessSeats = Integer.valueOf(st.nextToken()) * Integer.valueOf(st.nextToken());
+        int economicSeats = Integer.valueOf(st.nextToken()) * Integer.valueOf(st.nextToken());
+
+        System.out.println(businessSeats + economicSeats);
+    }
+}
+```
+---
+## 스타워즈 로고(9653번)
+### 풀이방법
+```java
+package Bronze_5;
+
+public class 스타워즈_로고_9653 {
+    public static void main(String[] args) {
+        System.out.println("    8888888888  888    88888\n" +
+                "   88     88   88 88   88  88\n" +
+                "    8888  88  88   88  88888\n" +
+                "       88 88 888888888 88   88\n" +
+                "88888888  88 88     88 88    888888\n" +
+                "\n" +
+                "88  88  88   888    88888    888888\n" +
+                "88  88  88  88 88   88  88  88\n" +
+                "88 8888 88 88   88  88888    8888\n" +
+                " 888  888 888888888 88  88      88\n" +
+                "  88  88  88     88 88   88888888");
+    }
+}
+```
+---
+## 나부 함대 데이터 (9654번)
+### 풀이방법
+```java
+package Bronze_5;
+
+public class 나부_함대_데이터_9654 {
+    public static void main(String[] args) {
+        System.out.println("SHIP NAME      CLASS          DEPLOYMENT IN SERVICE\n" +
+                "N2 Bomber      Heavy Fighter  Limited    21        \n" +
+                "J-Type 327     Light Combat   Unlimited  1         \n" +
+                "NX Cruiser     Medium Fighter Limited    18        \n" +
+                "N1 Starfighter Medium Fighter Unlimited  25        \n" +
+                "Royal Cruiser  Light Combat   Limited    4         ");
+    }
+}
+```
+---
+## NFC West vs North (10170번)
+### 풀이방법
+```java
+package Bronze_5;
+
+public class NFC_West_vs_North_10170 {
+    public static void main(String[] args) {
+        System.out.println("NFC West       W   L  T\n" +
+                "-----------------------\n" +
+                "Seattle        13  3  0\n" +
+                "San Francisco  12  4  0\n" +
+                "Arizona        10  6  0\n" +
+                "St. Louis      7   9  0\n" +
+                "\n" +
+                "NFC North      W   L  T\n" +
+                "-----------------------\n" +
+                "Green Bay      8   7  1\n" +
+                "Chicago        8   8  0\n" +
+                "Detroit        7   9  0\n" +
+                "Minnesota      5  10  1");
+    }
+}
+```
+---
+## 오늘 날짜 (10699번)
+### 풀이방법
+ - 푸는 날짜를 기준으로 작성해야 함
+```java
+package Bronze_5;
+
+public class 오늘_날짜_10699 {
+    public static void main(String[] args) {
+        System.out.println("2021-10-24");
+    }
+}
+```
+---
+## 큰 수 A+B (10757번)
+### 사전지식
+ - BigInteger 클래스 이해<br>
+  (BigInteger는 문자열을 생성자로 받을 수 있으며 내부적으로 문자열끼리 연산이 가능하도록 구현되어 있음)
+
+### 풀이방법
+```java
+package Bronze_5;
+
+import java.io.*;
+import java.math.*;
+import java.util.*;
+
+public class 큰_수_A_plus_B_10757 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        StringTokenizer st = new StringTokenizer(str);
+
+        BigInteger A = new BigInteger(st.nextToken());
+        BigInteger B = new BigInteger(st.nextToken());
+
+        System.out.println(A.add(B));
+    }
+}
+```
+---
+## ??! (10926번)
+### 걸림돌
+ - 문제를 잘못읽어 joonas 일때만 ??!를 붙여 출력하는 줄 알았다.
+
+### 느낀점
+ - 아무리 쉬운 문제라도 제대로 읽고 이해한 후 풀이하자.
+
+### 풀이방법
+```java
+package Bronze_5;
+
+import java.io.*;
+
+public class 준하_10926 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String name = br.readLine();
+        System.out.println(name + "??!");
+    }
+}
+```
+---
+## 한글 2 (11283번)
+### 사전지식
+ - 한글 한글자를 int형으로 변환하는 방법
+```text
+(int)'가'.charAt(0)
+```
+
+### 걸림돌
+ - 한글을 숫자로 변환하는데 별 짓을 다해봤다. 2진수로 변환, 유니코드 to int 등등 해봐도 안돼서 단순히 한글을 int 형식으로 변환하니 int형식으로 잘 나왔다.
+
+### 느낀점
+ - 너무 복잡하게 생각하지 말아야겠다.
+
+### 풀이방법
+ - 한글을 int형식으로 강제형변환 시켜주었고, `가`의 유니코드 값`(0xAC00)`을 빼주었다.
+ - 단순히 유니코드 값이 아닌 `가`를 빼주어도 정상적으로 작동한다.
+ - 한글 유니코드 (https://unicode.org/charts/PDF/UAC00.pdf) - 2페이지
+```java
+package Bronze_5;
+
+import java.io.*;
+
+public class 한글_2_11283 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+
+        System.out.println((int)str.charAt(0) - 0xAC00 + 1);
+//        System.out.println((int)str.charAt(0) - '가' + 1);
+    }
+}
+```
+---
+## 꼬마 정민 (11382번)
+### 사전지식
+ - 자료형의 범위
+
+### 주의사항
+ - 입력값이 `10^12`이므로 int 범위를 벗어남
+
+### 풀이방법
+```java
+package Bronze_5;
+
+import java.util.*;
+import java.io.*;
+
+public class 꼬마_정민_11382 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        StringTokenizer st = new StringTokenizer(str);
+
+        System.out.println(Integer.valueOf(st.nextToken()) + 
+                Integer.valueOf(st.nextToken()) + 
+                Integer.valueOf(st.nextToken()));
+    }
+}
+```
+---
+## 고려대학교 (11942번)
+### 풀이방법
+```java
+package Bronze_5;
+
+public class 고려대학교_11942 {
+    public static void main(String[] args) {
+        System.out.println("고려대학교");
+    }
+}
+```
+---
+## 큰 수 곱셈 (13277번)
+### 사전지식
+ - BigInteger 클래스 이해<br>
+   (BigInteger는 문자열을 생성자로 받을 수 있으며 내부적으로 문자열끼리 연산이 가능하도록 구현되어 있음)
+   
+### 풀이방법
+ - BigInteger 클래스의 곱셈 기능인 multiply 이용
+```java
+package Bronze_5;
+
+import java.util.*;
+import java.io.*;
+import java.math.*;
+
+public class 큰_수_곱셈_13277 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        StringTokenizer st = new StringTokenizer(str);
+
+        BigInteger A = new BigInteger(st.nextToken());
+        BigInteger B = new BigInteger(st.nextToken());
+        System.out.println(A.multiply(B));
+    }
+}
+```
