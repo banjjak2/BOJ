@@ -636,3 +636,63 @@ public class 큰_수_곱셈_13277 {
     }
 }
 ```
+---
+## 와이버스 부릉부릉 (14645번)
+### 주의사항
+ - 문제의 입력에는 뭔가 계산하고 출력할 것처럼 되어있지만 출력을 확인해보면 종착역 도착 시 `버스 운전수의 이름`을 출력해야 함
+ - 계산 문제가 아닌 단순 입/출력 문제
+
+### 풀이방법
+ - 입력은 받아야하므로 N만큼 입력받기만 하도록 처리
+```java
+package Bronze_5;
+
+import java.util.*;
+import java.io.*;
+
+public class 와이버스_부릉부릉_14645 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        StringTokenizer st = new StringTokenizer(str);
+        int N = Integer.valueOf(st.nextToken());
+
+        for(int i=0; i<N; i++){
+            str = br.readLine();
+        }
+
+        System.out.println("비와이");
+    }
+}
+```
+---
+## 나는 행복합니다 (14652번)
+### 풀이방법
+ - `자리번호/M`의 값이 n이 되고, `자리번호%M`의 값이 m이 된다.
+
+```java
+package Bronze_5;
+
+import java.util.*;
+import java.io.*;
+
+public class 나는_행복합니다_14652 {
+    public static void main(String[] args) throws IOException {
+        // n => 자리번호/M
+        // m => 자리번호%M
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        StringTokenizer st = new StringTokenizer(str);
+
+        int N = Integer.valueOf(st.nextToken());
+        int M = Integer.valueOf(st.nextToken());
+        int K = Integer.valueOf(st.nextToken());
+
+        int n = (K/M);
+        int m = (K%M);
+
+        System.out.println(n + " " + m);
+    }
+}
+```
+---
