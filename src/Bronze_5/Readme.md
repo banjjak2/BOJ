@@ -3,6 +3,7 @@
 ---
 
 ## 16진수 (1550번)
+https://www.acmicpc.net/problem/1550
 
 ### 사전지식
 - 16진수를 10진수로 변경하는 방법
@@ -45,6 +46,8 @@ public class 십육진수_1550 {
 ```
 ---
 ## 엄청난 부자2 (1271번)
+https://www.acmicpc.net/problem/1271
+
 ### 사전지식
  - java의 BigInteger 클래스
 ```text
@@ -83,6 +86,8 @@ public class 엄청난_부자_2_1271 {
 
 ---
 ## 긴자리 계산 (2338번)
+https://www.acmicpc.net/problem/2338
+
 ### 사전지식
 - java의 BigInteger 클래스
 ```text
@@ -114,6 +119,8 @@ public class 긴자리_계산_2338 {
 ---
 
 ## 검증수 (2475번)
+https://www.acmicpc.net/problem/2475
+
 ### 사전지식
  - StringTokenizer 사용방법
 
@@ -143,6 +150,8 @@ public class 검증수_2475 {
 ```
 ---
 ## A+B - 2 (2558번)
+https://www.acmicpc.net/problem/2558
+
 ### 사전지식
  - StringTokenizer 사용법
 
@@ -167,6 +176,8 @@ public class A_plus_B_2_2558 {
 ```
 ---
 ## 파티가 끝나고 난 뒤 (2845번)
+https://www.acmicpc.net/problem/2845
+
 ### 사전지식
  - StringTokenizer 사용법
  - 반복문
@@ -205,6 +216,8 @@ public class 파티가_끝나고_난_뒤_2845 {
 ```
 ---
 ## 저작권 (2914번)
+https://www.acmicpc.net/problem/2914
+
 ### 주의사항
  - 항상 올린다고 하였으므로 예제 1번에서 `38 24`일 때 평균값 24는 `평균값>23 또는 평균값<=24`가 되어야 함
  - 따라서 `앨범에 수록된 곡의 개수`와 `평균값-1`을 곱한 후 +1을 해주어야 적어도 몇 곡이 저작권에 걸리는지 알 수 있음.
@@ -235,6 +248,8 @@ public class 저작권_2914 {
 }
 ```
 ## 킹, 퀸, 룩, 비숍, 나이트, 폰 (3003번)
+https://www.acmicpc.net/problem/3003
+
 ### 풀이방법
  - 각 피스의 개수를 배열로 잡고 입력값에서 뺌
 ```java
@@ -257,6 +272,8 @@ public class 킹_퀸_룩_비숍_나이트_폰_3003 {
 }
 ```
 ## R2 (3046번)
+https://www.acmicpc.net/problem/3046
+
 ### 풀이방법
  - S = (R1 + R2) / 2
    R2 = S * 2 - R1
@@ -282,6 +299,8 @@ public class R2_3046 {
 }
 ```
 ## 웰컴 (5337번)
+https://www.acmicpc.net/problem/5337
+
 ### 풀이방법
  - 역슬래쉬 (\) 표현 시 \\로 대체해주어야 함
 ```java
@@ -297,6 +316,8 @@ public class 웰컴_5337 {
 ```
 ---
 ## 마이크로소프트 로고 (5338번)
+https://www.acmicpc.net/problem/5338
+
 ### 풀이방법
 ```java
 package Bronze_5;
@@ -313,6 +334,8 @@ public class 마이크로소프트_로고_5338 {
 ```
 ---
 ## 콜센터 (5339번)
+https://www.acmicpc.net/problem/5339
+
 ### 풀이방법
 ```java
 package Bronze_5;
@@ -334,6 +357,8 @@ public class 콜센터_5339 {
 ```
 ---
 ## 카드 게임 (5522번)
+https://www.acmicpc.net/problem/5522
+
 ### 풀이방법
 ```java
 package Bronze_5;
@@ -354,6 +379,8 @@ public class 카드_게임_5522 {
 ```
 ---
 ## 심부름 가는 길 (5554번)
+https://www.acmicpc.net/problem/5554
+
 ### 풀이방법
  - 모든 초를 더한 후 `분(x)`는 `초/60`, `초(y)`는 `초%60`
 ```java
@@ -374,6 +401,8 @@ public class 심부름_가는_길_5554 {
 ```
 ---
 ## Next in line (6749번)
+https://www.acmicpc.net/problem/6749
+
 ### 풀이방법
 ```java
 package Bronze_5;
@@ -392,6 +421,8 @@ public class Next_in_line_6749 {
 ```
 ---
 ## Plane (8370번)
+https://www.acmicpc.net/problem/8370
+
 ### 풀이방법
 ```java
 package Bronze_5;
@@ -414,6 +445,8 @@ public class Plane {
 ```
 ---
 ## 스타워즈 로고(9653번)
+https://www.acmicpc.net/problem/9653
+
 ### 풀이방법
 ```java
 package Bronze_5;
@@ -436,6 +469,8 @@ public class 스타워즈_로고_9653 {
 ```
 ---
 ## 나부 함대 데이터 (9654번)
+https://www.acmicpc.net/problem/9654
+
 ### 풀이방법
 ```java
 package Bronze_5;
@@ -453,6 +488,8 @@ public class 나부_함대_데이터_9654 {
 ```
 ---
 ## NFC West vs North (10170번)
+https://www.acmicpc.net/problem/10170
+
 ### 풀이방법
 ```java
 package Bronze_5;
@@ -477,6 +514,8 @@ public class NFC_West_vs_North_10170 {
 ```
 ---
 ## 오늘 날짜 (10699번)
+https://www.acmicpc.net/problem/10699
+
 ### 풀이방법
  - 푸는 날짜를 기준으로 작성해야 함
 ```java
@@ -490,6 +529,8 @@ public class 오늘_날짜_10699 {
 ```
 ---
 ## 큰 수 A+B (10757번)
+https://www.acmicpc.net/problem/10757
+
 ### 사전지식
  - BigInteger 클래스 이해<br>
   (BigInteger는 문자열을 생성자로 받을 수 있으며 내부적으로 문자열끼리 연산이 가능하도록 구현되어 있음)
@@ -517,6 +558,8 @@ public class 큰_수_A_plus_B_10757 {
 ```
 ---
 ## ??! (10926번)
+https://www.acmicpc.net/problem/10926
+
 ### 걸림돌
  - 문제를 잘못읽어 joonas 일때만 ??!를 붙여 출력하는 줄 알았다.
 
@@ -539,6 +582,8 @@ public class 준하_10926 {
 ```
 ---
 ## 한글 2 (11283번)
+https://www.acmicpc.net/problem/11283
+
 ### 사전지식
  - 한글 한글자를 int형으로 변환하는 방법
 ```text
@@ -572,6 +617,8 @@ public class 한글_2_11283 {
 ```
 ---
 ## 꼬마 정민 (11382번)
+https://www.acmicpc.net/problem/11382
+
 ### 사전지식
  - 자료형의 범위
 
@@ -599,6 +646,8 @@ public class 꼬마_정민_11382 {
 ```
 ---
 ## 고려대학교 (11942번)
+https://www.acmicpc.net/problem/11942
+
 ### 풀이방법
 ```java
 package Bronze_5;
@@ -611,6 +660,8 @@ public class 고려대학교_11942 {
 ```
 ---
 ## 큰 수 곱셈 (13277번)
+https://www.acmicpc.net/problem/13277
+
 ### 사전지식
  - BigInteger 클래스 이해<br>
    (BigInteger는 문자열을 생성자로 받을 수 있으며 내부적으로 문자열끼리 연산이 가능하도록 구현되어 있음)
@@ -638,6 +689,8 @@ public class 큰_수_곱셈_13277 {
 ```
 ---
 ## 와이버스 부릉부릉 (14645번)
+https://www.acmicpc.net/problem/14645
+
 ### 주의사항
  - 문제의 입력에는 뭔가 계산하고 출력할 것처럼 되어있지만 출력을 확인해보면 종착역 도착 시 `버스 운전수의 이름`을 출력해야 함
  - 계산 문제가 아닌 단순 입/출력 문제
@@ -667,6 +720,8 @@ public class 와이버스_부릉부릉_14645 {
 ```
 ---
 ## 나는 행복합니다 (14652번)
+https://www.acmicpc.net/problem/14652
+
 ### 풀이방법
  - `자리번호/M`의 값이 n이 되고, `자리번호%M`의 값이 m이 된다.
 
@@ -692,6 +747,367 @@ public class 나는_행복합니다_14652 {
         int m = (K%M);
 
         System.out.println(n + " " + m);
+    }
+}
+```
+---
+## 조별과제를 하려는데 조장이 사라졌다 (16727번)
+https://www.acmicpc.net/problem/16727
+
+### 풀이방법
+ - 최대한 빨리 찾는다고 하였으므로 성우는 1분에 무조건 5의 거리를 이동한다고 가정한다.
+ - 즉, 최소 t분 만에 찾아야하므로 집까지의 거리를 5로 나누고 나머지가 있을 경우 1분을 더해준다.
+```java
+package Bronze_5;
+
+import java.io.*;
+
+public class 조별과제를_하려는데_조장이_사라졌다_15727 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int L = Integer.valueOf(br.readLine());
+
+        int result = L/5;
+
+        System.out.println(L%5>0? result+1 : result);
+    }
+}
+```
+---
+## 나는 누구인가 (15733번)
+https://www.acmicpc.net/problem/15733
+
+### 풀이방법
+```java
+package Bronze_5;
+
+public class 나는_누구인가_15733 {
+    public static void main(String[] args) {
+        System.out.println("I'm Sexy");
+    }
+}
+```
+---
+## A+B - 9 (15740번)
+https://www.acmicpc.net/problem/15740
+
+### 풀이방법
+```java
+package Bronze_5;
+
+import java.util.*;
+import java.io.*;
+import java.math.*;
+
+public class A_plus_B_9_15740 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+        StringTokenizer st = new StringTokenizer(str);
+
+        BigInteger A = new BigInteger(st.nextToken());
+        BigInteger B = new BigInteger(st.nextToken());
+
+        System.out.println(A.add(B));
+    }
+}
+```
+---
+## 수학은 체육과목 입니다 (15894번)
+https://www.acmicpc.net/problem/15894
+
+### 주의사항
+ - 범위는 `1 ≤ n ≤ 10^9`이므로 int로 계산 불가능
+
+### 풀이방법
+ - 네모의 왼쪽과 오른쪽 실선의 개수 = 맨 아랫부분의 정사각형 개수 * 2
+ - 맨 아랫부분 실선의 개수 = 맨 아랫부분의 정사각형 개수
+ - 맨 윗부분 실선의 개수 = 1
+ - 각 층마다 반절씩 잘린 부분의 개수 = 맨 아랫부분 정사각형 개수 - 1
+ - 따라서, `(n * 2) + n + 1 + n - 1`이므로 `(n * 2) + (2 * n)` 으로 계산 가능
+```java
+package Bronze_5;
+
+import java.io.*;
+
+public class 수학은_체육과목_입니다_15894 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        long n = Long.valueOf(br.readLine());
+
+        // 네모의 왼쪽과 오른쪽 실선의 개수 : 맨 아랫부분의 정사각형 개수 * 2
+        // 맨 아랫부분 실선의 개수 : 맨 아랫부분의 정사각형 개수
+        // 맨 윗부분 실선의 개수 : 1
+        // 각 층마다 반절씩 잘린 부분의 개수 : 맨 아랫부분 정사각형 개수 - 1
+        // (n * 2) + n + 1 + n - 1
+        // (n * 2) + 2n
+
+        System.out.println((n * 2) + 2 * n);
+    }
+}
+```
+---
+## 새로운 시작 (15962번)
+https://www.acmicpc.net/problem/15962
+
+### 풀이방법
+```java
+package Bronze_5;
+
+public class 새로운_시작_15962 {
+    public static void main(String[] args) {
+        System.out.println("파이팅!!");
+    }
+}
+```
+---
+## 이상한 기호 (15964)
+https://www.acmicpc.net/problem/15964
+
+### 주의사항
+ - 범위가 `1 ≤ A, B ≤ 100,000` 이므로 int형으로 계산 불가능한 부분이 있음
+
+### 풀이방법
+```java
+package Bronze_5;
+
+import java.util.*;
+import java.io.*;
+
+public class 이상한_기호_15964 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        long A = Long.valueOf(st.nextToken());
+        long B = Long.valueOf(st.nextToken());
+
+        System.out.println((A+B)*(A-B));
+    }
+}
+```
+---
+## 오늘의 날짜는? (16170번)
+https://www.acmicpc.net/problem/16170
+
+### 주의사항
+ - 한국은 UTC+9 의 시간을 가지고 있으므로 현재 시간에서 -9를 한 후의 년월일을 입력해야 함
+
+### 풀이방법
+```java
+package Bronze_5;
+
+public class 오늘의_날짜는_16170 {
+    public static void main(String[] args) {
+        System.out.println("2021\n10\n26");
+    }
+}
+```
+---
+## 홍익대학교 (16394번)
+https://www.acmicpc.net/problem/16394
+
+### 풀이방법
+```java
+package Bronze_5;
+
+import java.util.Scanner;
+
+public class 홍익대학교_16394 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println(sc.nextInt() - 1946);
+    }
+}
+```
+---
+## 제리와 톰 (16430번)
+https://www.acmicpc.net/problem/16430
+
+### 주의사항
+ - 결과값을 기약분수로 표현한 후 출력해야함
+
+### 풀이방법
+ - A는 B보다 무조건 작아야 한다고 가정 (치즈를 B이상 훔쳐갈 수 없으므로)
+ - 톰이 가지고 있는 치즈의 무게를 `P`와 `Q`로 구함
+ - `Q`로 `P`를 나누었을 때 나머지가 0이라면 기약분수가 아니므로 나눈 결과값을 출력
+```java
+package Bronze_5;
+
+import java.util.*;
+import java.io.*;
+
+public class 제리와_톰_16430 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int A = Integer.valueOf(st.nextToken());
+        int B = Integer.valueOf(st.nextToken());
+
+        int P = B - A;
+        int Q = B;
+
+        if (Q%P == 0){
+            Q /= P;
+            P /= P;
+        }
+
+        System.out.println(P + " " + Q);
+    }
+}
+```
+---
+## 달달함이 넘쳐흘러 (17256번)
+https://www.acmicpc.net/problem/17256
+
+## 풀이방법
+```java
+package Bronze_5;
+
+import java.util.*;
+import java.io.*;
+
+public class 달달함이_흘러넘쳐_17256 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int ax, ay, az;
+        ax = Integer.valueOf(st.nextToken());
+        ay = Integer.valueOf(st.nextToken());
+        az = Integer.valueOf(st.nextToken());
+
+        st = new StringTokenizer(br.readLine());
+        int cx, cy, cz;
+        cx = Integer.valueOf(st.nextToken());
+        cy = Integer.valueOf(st.nextToken());
+        cz = Integer.valueOf(st.nextToken());
+
+        int bx, by, bz;
+        bx = cx - az;
+        by = cy / ay;
+        bz = cz - ax;
+
+        System.out.println(bx + " " + by + " " + bz);
+    }
+}
+```
+---
+## 엔드게임 스포일러 (17295번)
+https://www.acmicpc.net/problem/17295
+
+### 풀이방법
+```java
+package Bronze_5;
+
+import java.io.*;
+
+public class 엔드게임_스포일러_17295 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+
+        System.out.println("Avengers: Endgame");
+    }
+}
+```
+---
+## 스타후르츠 (17496번)
+https://www.acmicpc.net/problem/17496
+
+### 풀이방법
+- 날짜가 1일부터 시작하므로 N - 1을 해줌
+- 여름일수를 T로 나누면 여름일수동안 몇 번을 수확할 수 있는지 알 수 있음
+- 여름일수를 T로 나눈 값에 C를 곱하면 스타후르츠의 개수를 알 수 있음
+- 스타후르츠의 개수에 가격을 곱하면 총 금액을 알 수 있음
+```java
+package Bronze_5;
+
+import java.util.*;
+import java.io.*;
+
+public class 스타후르츠_17496 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int N = Integer.valueOf(st.nextToken()) - 1;
+        int T = Integer.valueOf(st.nextToken());
+        int C = Integer.valueOf(st.nextToken());
+        int P = Integer.valueOf(st.nextToken());
+
+        // 여름일수를 T로 나누면 여름일수동안 몇 번을 수확할 수 있는지 알 수 있음
+        // 여름일수를 T로 나눈 값에 C를 곱하면 스타후르츠의 개수를 알 수 있음
+        // 스타후르츠의 개수에 가격을 곱하면 총 금액을 알 수 있음
+        System.out.println((N/T)*C*P);
+    }
+}
+```
+---
+## 1998년생인 내가 태국에서는 2541년생?! (18108번)
+https://www.acmicpc.net/problem/18108
+
+### 풀이방법
+- 2541년에서 1998을 뺀 수가 불기에서 서기로 바꿔주는 수가 됨
+```java
+package Bronze_5;
+
+import java.io.*;
+
+public class 태국에서는_2541년생_18108 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int y = Integer.valueOf(br.readLine());
+
+        System.out.println(y - (2541-1998));
+    }
+}
+```
+---
+## 세금 (20492번)
+https://www.acmicpc.net/problem/20492
+
+### 풀이방법
+```java
+package Bronze_5;
+
+import java.io.*;
+
+public class 세금_20492 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.valueOf(br.readLine());
+
+        int one = N - (int)(N * 0.22);
+        int two = (int)(N - (N - N*0.80) * 0.22);
+
+        System.out.println(one + " " + two);
+    }
+}
+```
+---
+## A/B (1008번)
+https://www.acmicpc.net/problem/1008
+
+### 풀이방법
+- double로 데이터를 입력받고 나누기
+```java
+package Bronze_5;
+
+import java.util.*;
+import java.io.*;
+
+public class A_divide_B_1008 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        double A = Double.valueOf(st.nextToken());
+        double B = Double.valueOf(st.nextToken());
+
+        System.out.println(A/B);
     }
 }
 ```
