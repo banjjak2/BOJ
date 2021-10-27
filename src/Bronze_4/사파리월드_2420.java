@@ -1,16 +1,16 @@
-package Bronze_5;
+package Bronze_4;
 
 import java.util.*;
 import java.io.*;
 
-public class A_divide_B_1008 {
+public class 사파리월드_2420 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        double A = Double.valueOf(st.nextToken());
-        double B = Double.valueOf(st.nextToken());
+        long N = Long.valueOf(st.nextToken());
+        long M = Long.valueOf(st.nextToken());
 
-        System.out.println(A/B);
+        System.out.println(Math.abs(N - M));
     }
 }
