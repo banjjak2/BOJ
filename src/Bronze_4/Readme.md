@@ -261,3 +261,474 @@ public class 인공지능_시계_2530 {
     }
 }
 ```
+---
+## 세수정렬 (2752번)
+https://www.acmicpc.net/problem/2752
+
+### 사전지식
+- 배열 정렬 메소드 사용 방법
+
+### 풀이방법
+```java
+package Bronze_4;
+
+import java.util.*;
+import java.io.*;
+
+public class 세수정렬_2752 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int[] arr = new int[3];
+        for(int i=0; i<3; i++){
+            arr[i] = Integer.valueOf(st.nextToken());
+        }
+
+        Arrays.sort(arr);
+        for(int i=0; i<3; i++){
+            System.out.print(arr[i] + " ");
+        }
+    }
+}
+```
+---
+## 주사위 세개 (2480번)
+https://www.acmicpc.net/problem/2480
+
+### 풀이방법
+- AB, AC, BC만 확인하면 같은 눈이 무엇인지와 몇 개인지 알 수 있음
+```java
+package Bronze_4;
+
+import java.util.*;
+import java.io.*;
+
+public class 주사위_세개_2480 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int A = Integer.valueOf(st.nextToken());
+        int B = Integer.valueOf(st.nextToken());
+        int C = Integer.valueOf(st.nextToken());
+
+        // AB, AC, BC 만 확인하면 됨
+        int duplicateCount = 0;
+        int duplicateNumber = 0;
+        if (A == B) {
+            duplicateCount++;
+            duplicateNumber = A;
+            if (B == C) {
+                duplicateCount++;
+            }
+        }
+        else if (A == C) {
+            duplicateNumber = A;
+            duplicateCount++;
+        }
+        else if (B == C) {
+            duplicateNumber = B;
+            duplicateCount++;
+        }
+
+        switch (duplicateCount) {
+            // 중복이 없을 때
+            case 0:
+                int max = A;
+                if (B > max) max = B;
+                if (C > max) max = C;
+                System.out.println(max * 100);
+                break;
+
+            // 두 개가 동일할 경우
+            case 1:
+                System.out.println(1000 + (duplicateNumber * 100));
+                break;
+            
+            // 모두 다 동일한 경우
+            case 2:
+                System.out.println(10000 + (duplicateNumber * 1000));
+                break;
+        }
+    }
+}
+```
+---
+## 체스판 조각 (3004번)
+https://www.acmicpc.net/problem/3004
+
+### 풀이방법 1
+- 반복문을 이용한 풀이 (내가 푼 방법)
+- 체스판을 그려보면 1번 자를때 체스판은 2개가 되고, 3번 자를때 체스판은 6개가 된다. 그리고 4, 5번 자를때는 9, 12가 되는데, 이대로 자르게되면 아래와 같은 규칙이 보인다. 
+- `2, 2, 3, 3, 4, 4, 5, 5, 6, 6, ...` 순으로 체스판이 증가한다.
+![체스판_조각_3004](./IMG/체스판_조각_3004.jpeg)
+
+```java
+package Bronze_4;
+
+import java.io.*;
+
+public class 체스판_조각_3004 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.valueOf(br.readLine());
+
+        int sum = 0;
+        int add = 2;
+        for(int i=1; i<=N; i++) {
+            if (i%2 == 0 && i != 2) {
+                add++;
+            }
+
+            sum += add;
+        }
+
+        System.out.println(sum);
+    }
+}
+```
+## 풀이방법 2
+- 공식(?)을 이용한 풀이 (다른 사람의 풀이 방법)
+- 그림 (풀이방법 1 이미지 참조)을 그려서 살펴보면, 아래와 같은 결론이 나오게 된다.
+- 가로를 보면 `N/2+1` 만큼의 칸이 만들어짐을 알 수 있다.
+- 세로를 보면 `N-가로+2` 만큼의 칸이 만들어짐을 알 수 있다.
+```java
+package Bronze_4;
+
+import java.io.*;
+
+public class 체스판_조각_3004 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.valueOf(br.readLine());
+
+        int x = N/2 + 1;
+        int y = N - x + 2;
+
+        System.out.println(x * y);
+    }
+}
+```
+---
+## 방학 숙제 (5532번)
+https://www.acmicpc.net/problem/5532
+
+### 풀이방법
+- 주석으로 대체
+```java
+package Bronze_4;
+
+import java.io.*;
+
+public class 방학_숙제_5532 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        // 방학
+        int L = Integer.valueOf(br.readLine());
+        // 국어 총 페이지 수
+        int A = Integer.valueOf(br.readLine());
+        // 수학 총 페이지 수
+        int B = Integer.valueOf(br.readLine());
+        // 하루에 국어 최대 페이지
+        int C = Integer.valueOf(br.readLine());
+        // 하루에 수학 최대 페이지
+        int D = Integer.valueOf(br.readLine());
+
+        int sum = 0;
+        // C는 최대 페이지이므로 C보다 작을 수 있음
+        // 총 페이지 수를 최대 페이지 수로 나눈 나머지가 있으면
+        // 최대 페이지 미만의 페이지가 남아있는 것이므로 하루를 더 해야함
+        if (A%C > 0) {
+            sum = A/C+1;
+        }
+        else {
+            sum = A/C;
+        }
+
+        if (B%D > 0) {
+            // sum은 국어를 몇 일동안 푸는지에 대한 결과값이며,
+            // B/D+1은 최대 페이지 미만이 남았으므로 하루를 더해줌
+            if (sum < B/D+1) {
+                // B/D+1 이 sum보다 더 크다면 국어를 푸는 날보다 수학을 푸는 날이 더 많으므로 빼주어야 함
+                sum += (B/D+1 - sum);
+            }
+        }
+        else {
+            if (sum < B/D) {
+                sum += (B/D - sum);
+            }
+        }
+
+        System.out.println(L - sum);
+    }
+}
+```
+## 상근날드 (5543번)
+https://www.acmicpc.net/problem/5543
+
+### 풀이방법
+- 햄버거와 음료를 변수로 나누어 입력받은 후 각 항목에 대한 최소값 판별
+
+```java
+package Bronze_4;
+
+import java.io.*;
+
+public class 상근날드_5543 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int[] food = new int[3];
+        food[0] = Integer.valueOf(br.readLine());
+        food[1] = Integer.valueOf(br.readLine());
+        food[2] = Integer.valueOf(br.readLine());
+
+        int[] juice = new int[2];
+        juice[0] = Integer.valueOf(br.readLine());
+        juice[1] = Integer.valueOf(br.readLine());
+
+        int minFood = food[0];
+        if (food[1] < minFood)
+            minFood = food[1];
+        if (food[2] < minFood)
+            minFood = food[2];
+
+        int minJuice = juice[0];
+        if (juice[1] < minJuice)
+            minJuice = juice[1];
+
+        System.out.println(minFood+minJuice-50);
+    }
+}
+```
+---
+## 타임 카드 (5575번)
+https://www.acmicpc.net/problem/5575
+
+### 풀이방법
+```java
+package Bronze_4;
+
+import java.util.*;
+import java.io.*;
+
+public class 타임_카드_5575 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = null;
+        StringBuilder sb = new StringBuilder();
+
+        int H = 0, H1 = 0;
+        int M = 0, M1 = 0;
+        int S = 0, S1 = 0;
+        for(int i=0; i<3; i++) {
+            st = new StringTokenizer(br.readLine());
+            H = Integer.valueOf(st.nextToken());
+            M = Integer.valueOf(st.nextToken());
+            S = Integer.valueOf(st.nextToken());
+            H1 = Integer.valueOf(st.nextToken());
+            M1 = Integer.valueOf(st.nextToken());
+            S1 = Integer.valueOf(st.nextToken());
+
+            H1 -= H;
+            M1 -= M;
+            S1 -= S;
+
+            if (S1 < 0) {
+                M1--;
+                S1 = 60 + S1;
+            }
+
+            if (M1 < 0) {
+                H1--;
+                M1 = 60 + M1;
+            }
+
+            sb.append(H1).append(" ").append(M1).append(" ").append(S1).append("\n");
+        }
+
+        System.out.println(sb.toString());
+    }
+}
+```
+---
+## 시험 점수 (5596번)
+https://www.acmicpc.net/problem/5596
+
+### 풀이방법
+```java
+package Bronze_4;
+
+import java.util.*;
+import java.io.*;
+
+public class 시험_점수_5596 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = null;
+
+        int max = -1;
+        int tmp = 0;
+        for(int i=0; i<2; i++) {
+            st = new StringTokenizer(br.readLine());
+            tmp += Integer.valueOf(st.nextToken());
+            tmp += Integer.valueOf(st.nextToken());
+            tmp += Integer.valueOf(st.nextToken());
+            tmp += Integer.valueOf(st.nextToken());
+
+            if (max < tmp) {
+                max = tmp;
+            }
+            tmp = 0;
+        }
+
+        System.out.println(max);
+    }
+}
+```
+---
+## 17배 (5893번)
+https://www.acmicpc.net/problem/5893
+
+### 걸림돌
+- 주어지는 N이 1000자리인 것을 간과했다. `2^1000`은 long으로도 해결 불가능한 큰 수이다.
+- 처음에는 int형으로 제출했으나 틀려서 long으로 변경 후 제출해도 동일하게 틀렸었다.
+### 사전지식
+- BigInteger 클래스를 통한 2진수 및 10진수 변환 방법
+### 풀이방법
+- BigInteger 클래스를 통해 2진수를 10진수로 변환 후 17을 곱하고 다시 2진수로 바꾸어 주었다.
+```java
+package Bronze_4;
+
+import java.io.*;
+import java.math.BigInteger;
+
+public class Seventeen_5893 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        BigInteger b = new BigInteger(br.readLine(), 2);
+        b = b.multiply(new BigInteger("17"));
+
+        System.out.println(b.toString(2));
+    }
+}
+```
+---
+## 평균 점수 (10039번)
+https://www.acmicpc.net/problem/10039
+
+### 풀이방법
+```java
+package Bronze_4;
+
+import java.io.*;
+
+public class 평균_점수_10039 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int sum = 0;
+        int tmp = 0;
+        for(int i=0; i<5; i++) {
+            tmp = Integer.parseInt(br.readLine());
+            if (tmp < 40) {
+                tmp = 40;
+            }
+            sum += tmp;
+        }
+
+        System.out.println(sum / 5);
+    }
+}
+```
+---
+## 삼각형 외우기 (10101번)
+https://www.acmicpc.net/problem/10101
+
+### 걸림돌
+- 조건 중 `세 각의 크기가 모두 60이면, Equilateral` 조건을 세 각의 합이 60이면으로 잘못 이해해서 틀렸었다.
+
+### 풀이방법
+```java
+package Bronze_4;
+
+import java.util.*;
+import java.io.*;
+
+public class 삼각형_외우기_10101 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        int A = Integer.parseInt(br.readLine());
+        int B = Integer.parseInt(br.readLine());
+        int C = Integer.parseInt(br.readLine());
+
+        if (A == 60 && B == 60 && C == 60) {
+            bw.write("Equilateral");
+        }
+        else if (A+B+C != 180) {
+            bw.write("Error");
+        }
+        else if (A == B || A == C || B == C) {
+            bw.write("Isosceles");
+        }
+        else {
+            bw.write("Scalene");
+        }
+
+        bw.flush();
+    }
+}
+```
+---
+## 과자 (10156번)
+https://www.acmicpc.net/problem/10156
+
+### 풀이방법
+```java
+package Bronze_4;
+
+import java.util.*;
+import java.io.*;
+
+public class 과자_10156 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int K = Integer.parseInt(st.nextToken());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+
+        System.out.println((K * N - M < 0)? 0 : (K * N - M));
+    }
+}
+```
+---
+## 전자레인지 (10162번)
+https://www.acmicpc.net/problem/10162
+
+### 풀이방법
+```java
+package Bronze_4;
+
+import java.io.*;
+
+public class 전자레인지_10162 {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int T = Integer.parseInt(br.readLine());
+        if (T%10 > 0) {
+            System.out.println(-1);
+            return;
+        }
+
+        System.out.println(T/(5*60) + " " + T%(5*60)/60 + " " + T%(5*60)%60/10);
+    }
+}
+```
+---
