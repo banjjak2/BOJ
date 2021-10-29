@@ -16,12 +16,10 @@ https://www.acmicpc.net/problem/1297
 - 대각선 비율이 `루트 337, sqrt(337)`이 나왔으므로 `대각선 길이`를 `비율`로 나누면 비율 1당 길이가 나오게 된다.
 - 비율 1당 길이에 높이 비율 및 넓이 비율을 곱해서 표현하면 된다.
 ```java
-package Bronze_4;
-
 import java.util.*;
 import java.io.*;
 
-public class TV크기_1297 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -48,7 +46,7 @@ package Bronze_5;
 import java.util.*;
 import java.io.*;
 
-public class A_divide_B_1008 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -68,12 +66,10 @@ https://www.acmicpc.net/problem/1712
 - 가변비용이 노트북 가격보다 크거나 같다면 수익이 나올 수 없기 때문에 절대로 손익분기점이 나올 수 없음 `(B >= C)`
 - 노트북 가격에서 가변비용을 빼면 순수익이 나오게 되며 고정비용을 순수익으로 나누면 손익분기점이 나올 수 있는 최소 개수가 나오게 됨
 ```java
-package Bronze_4;
-
 import java.util.*;
 import java.io.*;
 
-public class 손익분기점_1712 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -103,12 +99,10 @@ https://www.acmicpc.net/problem/2420
 
 ### 풀이방법
 ```java
-package Bronze_4;
-
 import java.util.*;
 import java.io.*;
 
-public class 사파리월드_2420 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -135,12 +129,10 @@ https://www.acmicpc.net/problem/4299
 - `b`를 구했으면 위 수식 아무곳이나 `b`를 대입해 `a`를 구하면 된다.
 - 만약, `2b = 3`과 같이 정수로 떨어지지 않을 경우 a, b를 구할 수 없으므로 -1을 반환한다. `ex) 합 123, 차 90`
 ```java
-package Bronze_4;
-
 import java.util.*;
 import java.io.*;
 
-public class AFC_윔블던_4299 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -175,12 +167,10 @@ https://www.acmicpc.net/problem/15726
 - `1 * 2 / 3` => `2/3` => 0
 - `1 / 2 * 3` => `3/2` => 1.XXX (소수점 버리기) => 1
 ```java
-package Bronze_4;
-
 import java.util.*;
 import java.io.*;
 
-public class 이칙연산_15726 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -200,12 +190,10 @@ https://www.acmicpc.net/problem/2525
 
 ### 풀이방법
 ```java
-package Bronze_4;
-
 import java.util.*;
 import java.io.*;
 
-public class 오븐_시계_2525 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -231,12 +219,10 @@ https://www.acmicpc.net/problem/2530
 
 ### 풀이방법
 ```java
-package Bronze_4;
-
 import java.util.*;
 import java.io.*;
 
-public class 인공지능_시계_2530 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -270,12 +256,10 @@ https://www.acmicpc.net/problem/2752
 
 ### 풀이방법
 ```java
-package Bronze_4;
-
 import java.util.*;
 import java.io.*;
 
-public class 세수정렬_2752 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -299,12 +283,10 @@ https://www.acmicpc.net/problem/2480
 ### 풀이방법
 - AB, AC, BC만 확인하면 같은 눈이 무엇인지와 몇 개인지 알 수 있음
 ```java
-package Bronze_4;
-
 import java.util.*;
 import java.io.*;
 
-public class 주사위_세개_2480 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -365,11 +347,9 @@ https://www.acmicpc.net/problem/3004
 ![체스판_조각_3004](./IMG/체스판_조각_3004.jpeg)
 
 ```java
-package Bronze_4;
-
 import java.io.*;
 
-public class 체스판_조각_3004 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.valueOf(br.readLine());
@@ -394,11 +374,9 @@ public class 체스판_조각_3004 {
 - 가로를 보면 `N/2+1` 만큼의 칸이 만들어짐을 알 수 있다.
 - 세로를 보면 `N-가로+2` 만큼의 칸이 만들어짐을 알 수 있다.
 ```java
-package Bronze_4;
-
 import java.io.*;
 
-public class 체스판_조각_3004 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.valueOf(br.readLine());
@@ -417,11 +395,9 @@ https://www.acmicpc.net/problem/5532
 ### 풀이방법
 - 주석으로 대체
 ```java
-package Bronze_4;
-
 import java.io.*;
 
-public class 방학_숙제_5532 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -472,11 +448,9 @@ https://www.acmicpc.net/problem/5543
 - 햄버거와 음료를 변수로 나누어 입력받은 후 각 항목에 대한 최소값 판별
 
 ```java
-package Bronze_4;
-
 import java.io.*;
 
-public class 상근날드_5543 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int[] food = new int[3];
@@ -508,12 +482,10 @@ https://www.acmicpc.net/problem/5575
 
 ### 풀이방법
 ```java
-package Bronze_4;
-
 import java.util.*;
 import java.io.*;
 
-public class 타임_카드_5575 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = null;
@@ -558,12 +530,10 @@ https://www.acmicpc.net/problem/5596
 
 ### 풀이방법
 ```java
-package Bronze_4;
-
 import java.util.*;
 import java.io.*;
 
-public class 시험_점수_5596 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = null;
@@ -599,12 +569,10 @@ https://www.acmicpc.net/problem/5893
 ### 풀이방법
 - BigInteger 클래스를 통해 2진수를 10진수로 변환 후 17을 곱하고 다시 2진수로 바꾸어 주었다.
 ```java
-package Bronze_4;
-
 import java.io.*;
 import java.math.BigInteger;
 
-public class Seventeen_5893 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -621,11 +589,9 @@ https://www.acmicpc.net/problem/10039
 
 ### 풀이방법
 ```java
-package Bronze_4;
-
 import java.io.*;
 
-public class 평균_점수_10039 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -652,12 +618,10 @@ https://www.acmicpc.net/problem/10101
 
 ### 풀이방법
 ```java
-package Bronze_4;
-
 import java.util.*;
 import java.io.*;
 
-public class 삼각형_외우기_10101 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
@@ -689,12 +653,10 @@ https://www.acmicpc.net/problem/10156
 
 ### 풀이방법
 ```java
-package Bronze_4;
-
 import java.util.*;
 import java.io.*;
 
-public class 과자_10156 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -713,11 +675,9 @@ https://www.acmicpc.net/problem/10162
 
 ### 풀이방법
 ```java
-package Bronze_4;
-
 import java.io.*;
 
-public class 전자레인지_10162 {
+public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
@@ -728,6 +688,342 @@ public class 전자레인지_10162 {
         }
 
         System.out.println(T/(5*60) + " " + T%(5*60)/60 + " " + T%(5*60)%60/10);
+    }
+}
+```
+---
+## 쿠폰 (10179번)
+https://www.acmicpc.net/problem/10179
+
+## 걸림돌
+- 문제를 자세히 읽지 않아 출력 시 맨 앞에 $를 붙여야 하는것을 간과했다.
+
+## 사진지식
+- Java를 이용한 소수점 표현 방법
+- `String.format` 메소드를 이용한 방법 `String.format("%.2f", a)`
+- 결과값에 `10^자리수` 만큼 곱한 후 round 메소드를 이용해 반올림하고 다시 `10^자리수` 만큼 나누기
+- 단, round 메소드를 이용했을 때 12.00이 정답이라면 12.0 으로 출력되므로 String.format 이용
+
+### 풀이방법
+```java
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int N = Integer.parseInt(br.readLine());
+        StringBuilder sb = new StringBuilder();
+
+        double dollar = 0;
+        for(int i=0; i<N; i++) {
+            dollar = Double.parseDouble(br.readLine());
+            sb.append(String.format("$" + "%.2f", dollar*0.8)).append("\n");
+        }
+
+        System.out.println(sb.toString());
+    }
+}
+```
+---
+## 수도요금 (10707번)
+https://www.acmicpc.net/problem/10707
+
+### 풀이방법
+```java
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int A = Integer.parseInt(br.readLine());
+        int B = Integer.parseInt(br.readLine());
+        int C = Integer.parseInt(br.readLine());
+        int D = Integer.parseInt(br.readLine());
+        int P = Integer.parseInt(br.readLine());
+
+        int X = P * A;
+        int Y = B;
+
+        if (P > C) {
+            Y += (P - C)*D;
+        }
+
+        System.out.println((X>Y)? Y : X);
+    }
+}
+```
+---
+## 특별한 날 (10768번)
+https://www.acmicpc.net/problem/10768
+
+### 풀이방법
+```java
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int month = Integer.parseInt(br.readLine());
+        int day = Integer.parseInt(br.readLine());
+
+        if (month == 2 && day == 18) {
+            System.out.println("Special");
+            return;
+        }
+
+        if (month < 2) {
+            System.out.println("Before");
+        }
+        else {
+            if (month == 2 && day < 18) {
+                System.out.println("Before");
+            }
+            else {
+                System.out.println("After");
+            }
+        }
+    }
+}
+```
+---
+## 10부제 (10797번)
+### 풀이방법
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int day = Integer.parseInt(br.readLine());
+
+        int count = 0;
+        int tmp = 0;
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        for(int i=0; i<5; i++) {
+            tmp = Integer.parseInt(st.nextToken());
+            if (tmp == day) {
+                count++;
+            }
+        }
+
+        System.out.println(count);
+    }
+}
+```
+---
+## 한글 (11282번)
+https://www.acmicpc.net/problem/11282
+
+### 풀이방법
+```java
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+
+        System.out.println((char)(N + '가' - 1));
+    }
+}
+```
+---
+## 파일 옮기기 (11943번)
+https://www.acmicpc.net/problem/11943
+
+### 풀이방법
+- A와 D를 더한 값과 B와 C를 더한 값을 비교
+- A를 2번째 바구니로 옮길 경우 D를 1번째 바구니로 옮기고 B를 2번째 바구니로 옮길 경우 C를 1번째 바구니로 옮겨야 하므로 `A+D >= B+C`를 비교해서 더 적은쪽을 출력
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        
+        int A = Integer.parseInt(st.nextToken());
+        int B = Integer.parseInt(st.nextToken());
+        
+        st = new StringTokenizer(br.readLine());
+        
+        int C = Integer.parseInt(st.nextToken());
+        int D = Integer.parseInt(st.nextToken());
+        
+        if (A + D >= B + C) {
+            System.out.println(B + C);
+        }
+        else {
+            System.out.println(A + D);
+        }
+    }
+}
+```
+---
+## 과목선택 (11948번)
+https://www.acmicpc.net/problem/11948
+
+### 풀이방법
+- 삽입정렬을 구현하여 풀이
+```java
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int[] four = new int[4];
+        int[] two = new int[2];
+        
+        for(int i=0; i<4; i++) {
+            four[i] = Integer.parseInt(br.readLine());
+        }
+        
+        for(int i=0; i<2; i++) {
+            two[i] = Integer.parseInt(br.readLine());
+        }
+        
+        insertionSort(four);
+        insertionSort(two);
+        
+        System.out.println(four[3] + four[2] + four[1] + two[1]);
+    }
+    
+    public static void insertionSort(int[] arr) {
+        int n = arr.length;
+        int tmp = 0;
+        int index = 0;
+        for(int i=0; i<n-1; i++) {
+            index = i;
+            
+            for(int j=i+1; j<n; j++) {
+                if (arr[index] > arr[j]){
+                    index = j;
+                }
+            }
+            
+            tmp = arr[i];
+            arr[i] = arr[index];
+            arr[index] = tmp;
+        }
+    }
+}
+```
+---
+## 팀 나누기 (13866번)
+https://www.acmicpc.net/problem/13866
+
+### 실수
+- 입력의 조건을 제대로 확인하지 않아 필요없는 정렬을 구현해서 제출했었다.
+- 조건은 `0 ≤ A ≤ B ≤ C ≤ D ≤ 10^4`인데, A, B, C, D가 오름차순으로 들어온다는 것을 알 수 있다.
+### 풀이방법
+- 가장 큰 값과 가장 작은 값을 더한 결과와 중간 두 개를 더한 결과를 비교
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        
+        int[] skill = new int[4];
+        
+        for(int i=0; i<4; i++) {
+            skill[i] = Integer.parseInt(st.nextToken());
+        }
+                
+        System.out.println(Math.abs((skill[3] + skill[0]) - (skill[1] + skill[2])));
+    }
+}
+```
+---
+## 정육각형과 삼각형 (14264번)
+https://www.acmicpc.net/problem/14264
+
+### 사전지식
+- 피타고라스 정리 `a^2 + b^2 = c^2`
+- 삼각형 넓이 구하기 `(w * h) / 2`
+
+### 풀이방법
+```java
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        double L = Double.parseDouble(br.readLine());
+        double a = L/2;
+        double b = Math.sqrt(L*L - (a * a));
+
+        System.out.println((2*a*b)/2);
+    }
+}
+```
+---
+## 전자레인지 (14470번)
+https://www.acmicpc.net/problem/14470
+
+### 풀이방법
+- 주석참고
+
+```java
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int A = Integer.parseInt(br.readLine());
+        int B = Integer.parseInt(br.readLine());
+        int C = Integer.parseInt(br.readLine());
+        int D = Integer.parseInt(br.readLine());
+        int E = Integer.parseInt(br.readLine());
+
+        int time = 0;
+        // 얼어있을 때
+        if (A < 0) {
+            // 현재 온도 * 얼어있는 고기를 1도 데우는데 걸리는 시간
+            // 현재 온도 ~ 0도까지이기 때문
+            time += Math.abs(A) * C;
+            // 해동 시간
+            time += D;
+            // 해동이 완료된 상태이므로 현재 온도는 0으로
+            A = 0;
+        }
+
+        // 얼어있지 않을 때 목표 온도까지 걸리는 시간
+        time += (B - Math.abs(A)) * E;
+
+        System.out.println(time);
+    }
+}
+```
+---
+## 감정이입 (14623번)
+https://www.acmicpc.net/problem/14623
+
+### 풀이방법
+- 최대 가능한 결과값이 `2^30 * 2^30` 이므로 BigInteger를 이용
+```java
+import java.math.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        BigInteger B1 = new BigInteger(br.readLine(), 2);
+        BigInteger B2 = new BigInteger(br.readLine(), 2);
+        
+        B1 = B1.multiply(B2);
+        System.out.println(B1.toString(2));
     }
 }
 ```
