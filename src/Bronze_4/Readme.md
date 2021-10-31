@@ -1028,3 +1028,301 @@ public class Main {
 }
 ```
 ---
+## 사분면 고르기 (14681번)
+https://www.acmicpc.net/problem/14681
+
+### 풀이방법
+```java
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        int x = Integer.parseInt(br.readLine());
+        int y = Integer.parseInt(br.readLine());
+        
+        if (x > 0) {
+            if (y > 0) {
+                System.out.println(1);
+            }
+            else {
+                System.out.println(4);
+            }
+        }
+        else {
+            if (y > 0) {
+                System.out.println(2);
+            }
+            else {
+                System.out.println(3);
+            }
+        }
+    }
+}
+```
+---
+## 폰 노이만과 파리 (14924번)
+https://www.acmicpc.net/problem/14924
+
+### 풀이방법
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int S = Integer.parseInt(st.nextToken());
+        int T = Integer.parseInt(st.nextToken());
+        int D = Integer.parseInt(st.nextToken());
+
+        System.out.println(D/(S*2)*T);
+    }
+}
+```
+---
+## FA (14935번)
+https://www.acmicpc.net/problem/14935
+
+### 걸림돌
+- 왜인지 모르겠는데 0은 FA가 아닐거라고 생각하고 풀었었다.
+- 어차피 0도 수니까 FA가 되어야한다.
+
+### 풀이방법
+- 어떻게 입력받아도 최종 결과는 항상 한자리수이므로 결과값은 항상 FA가 된다.
+```java
+import java.io.*;
+import java.math.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        String s = br.readLine();
+        System.out.println("FA");
+    }
+}
+```
+---
+## 연세대학교 (15680번)
+https://www.acmicpc.net/problem/15680
+
+### 풀이방법
+```java
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        if (Integer.parseInt(br.readLine()) == 0) {
+            System.out.println("YONSEI");
+        }
+        else {
+            System.out.println("Leading the Way to the Future");
+        }
+    }
+}
+```
+---
+## 타일 채우기 4 (15700번)
+https://www.acmicpc.net/problem/15700
+
+### 풀이방법
+- `10억^2` 은 long의 범위안에 들어감
+- 2x1, 1x2 모두 크기가 2가 되므로 N*M 전체 크기에서 2만큼 나누면 됨
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        long N = Long.parseLong(st.nextToken());
+        long M = Long.parseLong(st.nextToken());
+
+        System.out.println(N*M/2);
+    }
+}
+```
+---
+## 공백 없는 A+B (15873번)
+https://www.acmicpc.net/problem/15873
+
+### 풀이방법
+- 숫자가 3자리, 4자리인 경우만 따로 처리
+```java
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        String s = br.readLine();
+        int len = s.length();
+
+        int sum = 0;
+        for(int i=0; i<s.length(); i++) {
+            sum += Character.getNumericValue(s.charAt(i));
+        }
+
+        if (len == 3) {
+            sum -= 1;
+            sum += 10;
+        }
+        else if (len == 4) {
+            sum -= 2;
+            sum += 20;
+        }
+
+        System.out.println(sum);
+    }
+}
+```
+---
+## 수찬은 마린보이야!! (15921번)
+https://www.acmicpc.net/problem/15921
+
+### 풀이방법
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+
+        if (N == 0) {
+            System.out.println("divide by zero");
+            return;
+        }
+
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        double average = 0; // 평균
+        double chance = 0; // 확률
+        int input = 0;
+        for(int i=0; i<N; i++) {
+            input = Integer.parseInt(st.nextToken());
+            average += input;
+            chance += (input * (1/(double)N));
+        }
+
+        if (chance == 0) {
+            System.out.println("divide by zero");
+            return;
+        }
+
+        average /= N;
+
+        System.out.println(String.format("%.2f", average/chance));
+    }
+}
+```
+---
+## CASIO (15963번)
+https://www.acmicpc.net/problem/15963
+
+### 풀이방법
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        
+        if (st.nextToken().equals(st.nextToken())) {
+            System.out.println(1);
+        }
+        else {
+            System.out.println(0);
+        }
+    }
+}
+```
+---
+## 나이 계산하기 (16199번)
+https://www.acmicpc.net/problem/16199
+
+### 풀이방법
+- 입력의 조건 중 `입력으로 주어지는 생년월일은 기준 날짜와 같거나 그 이전이다.` 의 조건을 볼 수 있는데 이 뜻은 기준날짜가 생년월일보다 작을 수 없다는 뜻이므로 월, 일로만 계산했다.
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        
+        int year = Integer.parseInt(st.nextToken());
+        int month = Integer.parseInt(st.nextToken());
+        int day = Integer.parseInt(st.nextToken());
+        
+        st = new StringTokenizer(br.readLine());
+        int inputYear = Integer.parseInt(st.nextToken());
+        int inputMonth = Integer.parseInt(st.nextToken());
+        int inputDay = Integer.parseInt(st.nextToken());
+        
+        // 기준 날짜가 생년월일보다 작을 수 없음 
+        // (입력으로 주어지는 생년월일은 기준 날짜와 같거나 그 이전이다.)
+        // 만 나이
+        int age = inputYear - year;
+        if (inputMonth < month) {
+            age--;
+        }
+        else if (inputMonth == month) {
+            if (inputDay < day) {
+                age--;
+            }
+        }
+        System.out.println(age);
+        
+        // 세는 나이
+        age = inputYear - year;
+        System.out.println(age + 1);
+        
+        // 연 나이
+        age = inputYear - year;
+        System.out.println(age);
+    }
+}
+```
+---
+## 카드 뽑기 (16204번)
+https://www.acmicpc.net/problem/16204
+
+### 풀이방법
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        // 카드의 총 개수
+        int N = Integer.parseInt(st.nextToken());
+        // 앞면에 O가 적혀있는 개수
+        int M = Integer.parseInt(st.nextToken());
+        // 뒷면에 적힌 O의 개수
+        int K = Integer.parseInt(st.nextToken());
+
+        int sum = 0;
+        sum += (M < K)? M : K;
+        sum += ((N-K) < (N-M))? N-K : N-M;
+
+        System.out.println(sum);
+    }
+}
+```
+---
