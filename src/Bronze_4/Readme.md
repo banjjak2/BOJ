@@ -1326,3 +1326,335 @@ public class Main {
 }
 ```
 ---
+## 베시와 데이지 (16431번)
+https://www.acmicpc.net/problem/16431
+
+### 사전지식
+https://banjjak1.tistory.com/9?category=978276
+- 멘하탄 거리
+- 유클리드 거리
+
+### 풀이방법
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int B1 = Integer.parseInt(st.nextToken());
+        int B2 = Integer.parseInt(st.nextToken());
+
+        st = new StringTokenizer(br.readLine());
+        int D1 = Integer.parseInt(st.nextToken());
+        int D2 = Integer.parseInt(st.nextToken());
+
+        st = new StringTokenizer(br.readLine());
+        int J1 = Integer.parseInt(st.nextToken());
+        int J2 = Integer.parseInt(st.nextToken());
+
+        double bessie = (int)Math.sqrt(Math.pow(B2 - J2, 2) + Math.pow(B1 - J1, 2));
+        int daisy = Math.abs(D2 - J2) + Math.abs(D1 - J1);
+
+        if (bessie < daisy) {
+            System.out.println("bessie");
+        }
+        else if (bessie > daisy) {
+            System.out.println("daisy");
+        }
+        else {
+            System.out.println("tie");
+        }
+    }
+}
+```
+---
+## 운동장 한 바퀴 (16486번)
+https://www.acmicpc.net/problem/16486
+
+### 사전지식
+- 원둘레 구하기 `(2 * 파이 * 반지름)`
+
+### 풀이방법
+```java
+import java.io.*;
+
+public class Main {
+    private static final double PI = 3.141592;
+    
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        Double d1 = Double.parseDouble(br.readLine());
+        Double d2 = Double.parseDouble(br.readLine());
+
+        System.out.println(d1 * 2 + 2 * PI * d2);
+    }
+}
+```
+---
+## 수학은 체육과목 입니다 2 (17362번)
+https://www.acmicpc.net/problem/17362
+
+### 풀이방법
+- 값들을 직접 입력해보면 특정 규칙을 발견할 수 있다.
+  ![수학은_체육과목_입니다_2_17362_1](./IMG/수학은_체육과목입니다_2_17362_1.jpeg)
+- 엄지손가락 주기로 모든 값을 나눈 나머지를 구하면 아래와 같다.
+  ![수학은_체육과목_입니다_2_17362_2](./IMG/수학은_체육과목_입니다_2_17362_2.jpeg)
+
+```java
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int n = Integer.parseInt(br.readLine()) % 8;
+        switch (n) {
+            case 1:
+                System.out.println(1);
+                break;
+
+            case 2:
+            case 0:
+                System.out.println(2);
+                break;
+
+            case 3:
+            case 7:
+                System.out.println(3);
+                break;
+
+            case 4:
+            case 6:
+                System.out.println(4);
+                break;
+
+            case 5:
+                System.out.println(5);
+                break;
+        }
+    }
+}
+```
+---
+## 와글와글 숭고한 (17388번)
+https://www.acmicpc.net/problem/17388
+
+### 풀이방법
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        
+        int S = Integer.parseInt(st.nextToken());
+        int K = Integer.parseInt(st.nextToken());
+        int H = Integer.parseInt(st.nextToken());
+        
+        StringBuilder sb = new StringBuilder();
+        sb.append("Soongsil");
+        int min = S;
+        if (min > K) {
+            sb.delete(0, sb.length());
+            sb.append("Korea");
+            min = K;
+        }
+        if (min > H) {
+            sb.delete(0, sb.length());
+            sb.append("Hanyang");
+            min = H;
+        }
+        
+        if (S + K + H >= 100) {
+            System.out.println("OK");
+        }
+        else {
+            System.out.println(sb.toString());
+        }
+    }
+}
+```
+## 헛간 청약 (19698번)
+https://www.acmicpc.net/problem/19698
+
+### 풀이방법
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int[] cow = new int[4];
+        for(int i=0; i<4; i++) {
+            cow[i] = Integer.parseInt(st.nextToken());
+        }
+
+        int totalCow = (int)(cow[1]/cow[3]) * (int)(cow[2]/cow[3]);
+        if (totalCow > cow[0]) {
+            System.out.println(cow[0]);
+        }
+        else {
+            System.out.println(totalCow);
+        }
+    }
+}
+```
+---
+## 뉴비의 기준은 뭘까? (19944번)
+https://www.acmicpc.net/problem/19944
+
+### 풀이방법
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        
+        if (M <= 2) {
+            System.out.println("NEWBIE!");
+        }
+        else if (M > 2 && M <= N) {
+            System.out.println("OLDBIE!");
+        }
+        else {
+            System.out.println("TLE!");
+        }
+    }
+}
+```
+---
+## Darius님 한타 안 함? (20499번)
+https://www.acmicpc.net/problem/20499
+
+### 풀이방법
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine(), "/");
+        
+        int K = Integer.parseInt(st.nextToken());
+        int D = Integer.parseInt(st.nextToken());
+        int A = Integer.parseInt(st.nextToken());
+        
+        if (K + A < D || D == 0) {
+            System.out.println("hasu");
+        }
+        else {
+            System.out.println("gosu");
+        }
+    }
+}
+```
+## 분산처리 (1009번)
+## 재풀이 예정
+https://www.acmicpc.net/problem/1009
+
+### 걸림돌
+- 제곱한 수의 마지막 자리 숫자가 1이면 몇 번을 제곱해도 정답의 마지막 자리 값이 1이 되고, 2일 경우 2, 4, 8, 6, 2, ..., 3일 경우 3, 9, 7, 1, 3, ... 과 같이
+반복되는 것을 확인해서 a의 마지막 자리에 b의 마지막자리만큼 제곱한 결과에서 마지막 자리가 정답이 될 것이라고 생각했다.
+  <br>ex) 17^3 (4913) => 7^3 (343) => 3
+  <br>ex) 15^12 (129746337890625) => 5^2 (25) => 5
+- BigInteger 클래스를 이용해 계산하려고 했으나 값이 워낙 커지기 때문에 시간초과가 발생했다.
+- 결국 a에 1부터 b까지 계속 곱한 후 10으로 나머지 연산을 수행하여 풀었다.
+- 그러나 시간복잡도가 n^2 이라서 그런지 시간이 1320ms 나 걸렸고 다른 문제 푸신 분들은 300ms 내로 풀었다.
+
+### 풀이방법
+```java
+import java.util.*;
+import java.io.*;
+import java.math.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+
+        StringTokenizer st = null;
+        StringBuilder sb = new StringBuilder();
+        int a = 0;
+        int b = 0;
+        int result = 1;
+        for(int i=0; i<n; i++) {
+            st = new StringTokenizer(br.readLine());
+
+            a = Integer.parseInt(st.nextToken());
+            b = Integer.parseInt(st.nextToken());
+
+            for(int j=1; j<=b; j++) {
+                result = (result * a) % 10;
+            }
+
+            if (result == 0) {
+                sb.append(10).append("\n");
+            }
+            else {
+                sb.append(result).append("\n");
+            }
+            result = 1;
+        }
+
+        System.out.println(sb.toString());
+    }
+}
+```
+---
+## 직사각형에서 탈출 (1085번)
+https://www.acmicpc.net/problem/1085
+
+### 풀이방법
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int x = Integer.parseInt(st.nextToken());
+        int y = Integer.parseInt(st.nextToken());
+        int w = Integer.parseInt(st.nextToken());
+        int h = Integer.parseInt(st.nextToken());
+
+        int min = x;
+        if (x < w - x) {
+            min = x;
+        }
+        else {
+            min = w - x;
+        }
+
+        if (y < h - y) {
+            if (min > y) {
+                min = y;
+            }
+        }
+        else {
+            if (min > h - y) {
+                min = h - y;
+            }
+        }
+
+        System.out.println(min);
+    }
+}
+```
+---
