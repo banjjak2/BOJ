@@ -1658,3 +1658,188 @@ public class Main {
 }
 ```
 ---
+## 8진수 2진수 (1212번)
+https://www.acmicpc.net/problem/1212
+
+### 걸림돌
+- 처음에는 그냥 int로 풀었다가 수의 길이가 333,334 임을 보고 BigInteger를 이용해 풀었는데 그래도 정답이 아니었다. 
+- 두번째로 StringBuilder의 insert를 이용해 풀었었다. 계속 시간초과 오류가 뜨길래 아무리봐도 문제가 될만한 부분은 보이지 않았는데, 
+혹시나 하고 기존에 사용하던 insert대신에 append를 이용해 풀었더니 풀렸다.
+
+### 사전지식
+- 8진수를 2진수로 변환하는 방법 (참고 : https://www.lgsl.kr/cur/HODA2008040043)
+
+### 풀이방법
+```java
+import java.io.*;
+import java.math.*;
+
+// 참고자료 : https://www.lgsl.kr/cur/HODA2008040043
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println(octalToBinary(br.readLine()));
+    }
+
+    private static String octalToBinary(String octal) {
+        StringBuilder convSb = new StringBuilder();
+        String tmp = "";
+        for (int i = 0; i < octal.length(); i++) {
+            tmp = convBinary(octal.charAt(i));
+            convSb.append(tmp);
+        }
+
+        while (convSb.length() != 0 && convSb.charAt(0) != '1') {
+            convSb.deleteCharAt(0);
+        }
+
+        if (convSb.length() == 0) {
+            return "0";
+        }
+
+        return convSb.toString();
+    }
+
+    private static String convBinary(char c) {
+        int value = c - '0';
+        char[] bin = new char[3];
+
+        for(int i=0; i<3; i++) {
+            bin[2 - i] = (char)(value%2 + '0');
+            value/=2;
+        }
+
+        return new String(bin);
+    }
+}
+```
+---
+## 부호 (1247번)
+https://www.acmicpc.net/problem/1247
+
+### 풀이방법
+```java
+import java.io.*;
+import java.math.*;
+
+public class Main {
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int N = 0;
+    BigInteger sum = null;
+    char[] sign = new char[3];
+
+    for(int i=0; i<3; i++) {
+      sum = new BigInteger("0");
+      N = Integer.parseInt(br.readLine());
+
+      for(int j=0; j<N; j++) {
+        sum = sum.add(new BigInteger(br.readLine()));
+      }
+
+      if (sum.compareTo(BigInteger.valueOf(0)) == 0) {
+        sign[i] = '0';
+      }
+      else if (sum.compareTo(BigInteger.valueOf(0)) > 0) {
+        sign[i] = '+';
+      }
+      else {
+        sign[i] = '-';
+      }
+    }
+
+    for(int i=0; i<sign.length; i++) {
+      System.out.println(sign[i]);
+    }
+  }
+}
+```
+---
+## 핸드폰 요금 (1267번)
+https://www.acmicpc.net/problem/1267
+
+### 걸림돌
+- 0초 일때도 돈을 지불해야한다. 0초는 당연히 포함되지 않을 것으로 판단했는데 판단 미스였다.
+- 민식이와 영식이의 시간을 잘못 입력해놓고 삽질하고 있었다..
+
+### 풀이방법
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    private static final int MINSIK_TIME = 60;
+    private static final int MINSIK_PAY = 15;
+
+    private static final int YOUNGSIK_TIME = 30;
+    private static final int YOUNGSIK_PAY = 10;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int minsik = 0;
+        int youngsik = 0;
+        int time = 0;
+        while(st.hasMoreTokens()) {
+            time = Integer.parseInt(st.nextToken());
+            minsik += (time / MINSIK_TIME + 1) * MINSIK_PAY;
+            youngsik += (time / YOUNGSIK_TIME + 1) * YOUNGSIK_PAY;
+        }
+
+        if (minsik == youngsik) {
+            System.out.println("Y M " + minsik);
+        }
+        else if (minsik > youngsik) {
+            System.out.println("Y " + youngsik);
+        }
+        else {
+            System.out.println("M " + minsik);
+        }
+    }
+}
+```
+## 집 주소 (1284번)
+https://www.acmicpc.net/problem/1284
+
+### 풀이방법
+```java
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+
+        String N = "";
+        int sum = 0;
+        char chr = ' ';
+        while(!(N = br.readLine()).equals("0")) {
+            sum = 0;
+            for(int i=0; i<N.length(); i++) {
+                chr = N.charAt(i);
+                if (chr == '0') {
+                    sum += 4;
+                }
+                else if (chr == '1') {
+                    sum += 2;
+                }
+                else {
+                    sum += 3;
+                }
+            }
+            // 각 숫자 사이의 여백 1cm
+            sum += N.length() - 1;
+            // 경계
+            sum += 2;
+
+            bw.write(sum + "\n");
+        }
+
+        bw.flush();
+        bw.close();
+    }
+}
+```
