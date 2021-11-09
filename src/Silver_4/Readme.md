@@ -107,3 +107,67 @@ public class Main {
     }
 }
 ```
+---
+## 문자열 (1120번)
+https://www.acmicpc.net/problem/1120
+
+### 풀이방법
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+
+    /**
+     * 
+     * A B C D E
+     * A B C
+     * 인 경우    
+     * 
+     * A B C D E
+     * A B C ? ?
+     * 
+     * A B C D E
+     * ? A B C ?
+     * 
+     * A B C D E
+     * ? ? A B C
+     * 
+     * 로 비교
+     * 
+     */
+    
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        String A = st.nextToken();
+        String B = st.nextToken();
+
+        int lenA = A.length();
+        int lenB = B.length();
+
+        int min = 100;
+        int compareCount = 0;
+        int curIdxOfA = 0;
+        for(int i=0; i<=lenB-lenA; i++) {
+            curIdxOfA = 0;
+            compareCount = 0;
+            for(int j=i; j<lenB; j++) {
+                if (curIdxOfA >= lenA) {
+                    break;
+                }
+                else if (B.charAt(j) != A.charAt(curIdxOfA)) {
+                    compareCount++;
+                }
+
+                curIdxOfA++;
+            }
+
+            min = Math.min(min, compareCount);
+        }
+
+        System.out.println(min);
+    }
+}
+```
