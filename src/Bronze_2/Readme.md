@@ -92,3 +92,60 @@ public class Main {
 }
 ```
 ---
+## 운동 (1173번)
+https://www.acmicpc.net/problem/1173
+
+### 풀이방법
+1. 현재 맥박이 M보다 커지기 전까지 T 값 더하기
+2. 현재 맥박에서 T값이 들어갈 때까지 R값 빼기
+3. 뺀 값이 m보다 작으면 현재 맥박은 다시 m으로 변경
+4. 1 ~ 3 반복
+```java
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int N = Integer.parseInt(st.nextToken());
+        int m = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        int T = Integer.parseInt(st.nextToken());
+        int R = Integer.parseInt(st.nextToken());
+
+        if (m + T > M) {
+            System.out.println(-1);
+            return;
+        }
+
+        int curPulse = m;
+        int restTime = 0;
+        int exerciseTime = 0;
+        while(exerciseTime < N) {
+            if (curPulse < m) {
+                curPulse = m;
+            }
+
+            if (curPulse + T <= M) {
+                curPulse += T;
+                exerciseTime++;
+                continue;
+            }
+
+            while(true) {
+                if (Math.abs(curPulse - M) < T) {
+                    restTime++;
+                    curPulse -= R;
+                }
+                else {
+                    break;
+                }
+            }
+        }
+
+        System.out.println(N + restTime);
+    }
+}
+```
