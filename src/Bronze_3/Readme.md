@@ -748,3 +748,36 @@ public class Main {
 }
 ```
 ---
+## 점수계산 (2506번)
+https://www.acmicpc.net/problem/2506
+
+### 풀이방법
+```java
+import java.io.*;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        
+        int result = 0;
+        int sum = 0;
+        
+        while(st.hasMoreTokens()) {
+            if (st.nextToken().equals("0")) {
+                sum = 0;
+            }
+            else {
+                sum++;
+            }
+            
+            result += sum;
+        }
+
+        System.out.println(result);
+    }
+}
+```
+---
