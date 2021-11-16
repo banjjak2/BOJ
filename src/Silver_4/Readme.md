@@ -171,3 +171,162 @@ public class Main {
     }
 }
 ```
+---
+## 스택 (10828번)
+https://www.acmicpc.net/problem/10828
+
+### 사전지식
+- 스택 (Stack)
+
+### 풀이방법
+```java
+import java.util.StringTokenizer;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        Stack stack = new Stack();
+        stack.init(N);
+
+        StringTokenizer st = null;
+        StringBuilder sb = new StringBuilder();
+        while(--N >= 0) {
+            st = new StringTokenizer(br.readLine());
+
+            switch(st.nextToken()) {
+                case "push":
+                    stack.push(Integer.parseInt(st.nextToken()));
+                    break;
+
+                case "pop":
+//                    bw.write(stack.pop() + "\n");
+                    sb.append(stack.pop()).append("\n");
+                    break;
+
+                case "size":
+//                    bw.write(stack.size() + "\n");
+                    sb.append(stack.size()).append("\n");
+                    break;
+
+                case "empty":
+//                    bw.write(stack.empty() + "\n");
+                    sb.append(stack.empty()).append("\n");
+                    break;
+
+                case "top":
+//                    bw.write(stack.top() + "\n");
+                    sb.append(stack.top()).append("\n");
+                    break;
+            }
+        }
+
+        System.out.println(sb.toString());
+    }
+
+    public static class Stack {
+        int[] arr = null;
+        int size = 0;
+        public void init(int capacity) {
+            arr = new int[capacity];
+        }
+
+        public int empty() {
+            if (size == 0) {
+                return 1;
+            }
+
+            return 0;
+        }
+
+        public int size() {
+            return size;
+        }
+
+        public void push(int x) {
+            arr[size++] = x;
+        }
+
+        public int pop() {
+            if (empty() == 1) {
+                return -1;
+            }
+
+            return arr[--size];
+        }
+
+        public int top() {
+            if (empty() == 1) {
+                return -1;
+            }
+
+            return arr[size-1];
+        }
+    }
+}
+```
+---
+## 괄호 (9012번)
+https://www.acmicpc.net/problem/9012
+
+### 참고
+- 스택을 이용하지 않고도 풀 수 있음
+- `(`와 `)`는 짝이 맞아야 함
+- 문자열을 확인할 때 `(`를 만나면 +1, `)`을 만나면 -1 과정을 반복하다가
+음수가 나오면 `(` 문자는 없는데 `)` 문자가 나온 것이므로 `NO`로 출력
+
+### 풀이방법
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        Stack<Character> stack = new Stack<>();
+
+        int T = Integer.parseInt(br.readLine());
+        String str = null;
+        char chr = ' ';
+        StringBuilder sb = new StringBuilder();
+        boolean fail = false;
+        while(T-- > 0) {
+            str = br.readLine();
+            stack.clear();
+            for(int i=0; i<str.length(); i++) {
+                chr = str.charAt(i);
+
+                if (chr == ')') {
+                    if (stack.empty()) {
+                        sb.append("NO").append('\n');
+                        fail = true;
+                        break;
+                    }
+                    else {
+                        stack.pop();
+                    }
+                }
+                else {
+                    stack.push(chr);
+                }
+            }
+
+            if (!fail && stack.empty()) {
+                sb.append("YES").append('\n');
+            }
+            else if (!stack.empty()) {
+                sb.append("NO").append('\n');
+            }
+            fail = false;
+        }
+
+        System.out.println(sb.toString());
+    }
+}
+```
+---

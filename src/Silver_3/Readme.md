@@ -77,3 +77,126 @@ public class Main {
 }
 ```
 ---
+## 스택 수열 (1874번)
+https://www.acmicpc.net/problem/1874
+
+### 풀이방법
+- 예제를 직접 그리면서 확인해보면 쉽게 구현 가능
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        Stack<Integer> stack = new Stack<>();
+        int input = 0;
+        int curValue = 0;
+        StringBuilder sb = new StringBuilder();
+
+        while(n-- > 0) {
+            input = Integer.parseInt(br.readLine());
+
+            if (input > curValue) {
+                while(input > curValue) {
+                    stack.push(++curValue);
+                    sb.append("+\n");
+                }
+            }
+            else {
+                if (stack.peek() != input) {
+                    System.out.println("NO");
+                    return;
+                }
+            }
+
+            stack.pop();
+            sb.append("-\n");
+        }
+
+        System.out.println(sb);
+    }
+}
+```
+---
+## 에디터 (1406번)
+https://www.acmicpc.net/problem/1406
+
+### 풀이방법
+- 문자열을 관리할 Stack과 커서 이동으로 인한 임시 Stack을 선언
+- `L` : 왼쪽으로 한 칸 (문자열 Stack에서 pop 후 임시저장 Stack에 push, 비어있으면 수행 X)
+- `D` : 오른쪽으로 한 칸 (임시저장 Stack에서 pop 후 문자열 Stack에 push, 비어있으면 수행 X)
+- `B` : 문자열 스택 pop (비어있으면 수행 X)
+- `P` : 문자열 스택에 데이터 push (커서의 왼쪽에 추가한다고 하였으므로)
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.Stack;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        String str = br.readLine();
+
+        Stack<Character> strStack = new Stack<>();
+        Stack<Character> tmpStoreStack = new Stack<>();
+        for(int i=0; i<str.length(); i++) {
+            strStack.push(str.charAt(i));
+        }
+
+        int cmdCount = Integer.parseInt(br.readLine());
+        String cmd;
+        while(cmdCount-- > 0) {
+            cmd = br.readLine();
+
+            switch(cmd.charAt(0)) {
+                case 'L':
+                    if (strStack.isEmpty()) {
+                        break;
+                    }
+
+                    tmpStoreStack.push(strStack.pop());
+                    break;
+
+                case 'D':
+                    if (tmpStoreStack.isEmpty()) {
+                        break;
+                    }
+
+                    strStack.push(tmpStoreStack.pop());
+                    break;
+
+                case 'B':
+                    if (strStack.isEmpty()) {
+                        break;
+                    }
+
+                    strStack.pop();
+                    break;
+
+                case 'P':
+                    strStack.push(cmd.charAt(2));
+                    break;
+            }
+        }
+
+        while(!tmpStoreStack.isEmpty()) {
+            strStack.push(tmpStoreStack.pop());
+        }
+
+        StringBuilder sb = new StringBuilder();
+        while(!strStack.isEmpty()) {
+            sb.append(strStack.pop());
+        }
+        sb = sb.reverse();
+        sb.append('\n');
+        System.out.println(sb);
+    }
+}
+```
+---

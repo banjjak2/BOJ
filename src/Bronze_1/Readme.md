@@ -50,3 +50,78 @@ public class Main {
 }
 ```
 ---
+## 단어 뒤집기 (9093번)
+https://www.acmicpc.net/problem/9093
+
+### 풀이방법 1 (스택)
+```java
+import java.util.Stack;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
+        Stack<Character> stack = new Stack<>();
+
+        String input = null;
+        StringBuilder sb = new StringBuilder();
+        char chr = ' ';
+        while(T-- > 0) {
+            input = br.readLine() + "\n";
+
+            for(int i=0; i<input.length(); i++) {
+                chr = input.charAt(i);
+                if (chr == ' ' || chr == '\n') {
+                    while(!stack.empty()) {
+                        sb.append(stack.pop());
+                    }
+
+                    if (chr != '\n') {
+                        sb.append(chr);
+                    }
+                }
+                else {
+                    stack.push(chr);
+                }
+            }
+            sb.append("\n");
+        }
+
+        System.out.println(sb.toString());
+    }
+}
+```
+
+### 풀이방법 2 (StringBuilder)
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
+
+        StringTokenizer st = null;
+        StringBuilder sb = new StringBuilder();
+        StringBuilder word = null;
+        while (T-- > 0) {
+            st = new StringTokenizer(br.readLine());
+
+            while(st.hasMoreTokens()) {
+                word = new StringBuilder(st.nextToken());
+                sb.append(word.reverse().append(' '));
+            }
+            sb.append('\n');
+        }
+
+        System.out.println(sb.toString());
+    }
+}
+```
+---
