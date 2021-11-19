@@ -182,3 +182,96 @@ public class Main {
     }
 }
 ```
+---
+## 알파벳 개수 (10808번)
+https://www.acmicpc.net/problem/10808
+
+### 풀이방법
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        char[] S = br.readLine().toCharArray();
+        int[] alphabet = new int[26];
+
+        for(int i=0; i<S.length; i++) {
+            alphabet[S[i] - 'a']++;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        for(int i=0; i<alphabet.length; i++) {
+            sb.append(alphabet[i]).append(' ');
+        }
+        System.out.println(sb);
+    }
+}
+```
+---
+## 문자열 분석 (10820번)
+https://www.acmicpc.net/problem/10820
+
+### 풀이방법
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int[] count = new int[4];
+        String S = "";
+        char chr = ' ';
+        StringBuilder sb = new StringBuilder();
+        while((S = br.readLine()) != null) {
+            for(int i=0; i<S.length(); i++) {
+                chr = S.charAt(i);
+                if (chr >= 'a' && chr <= 'z') {
+                    count[0]++;
+                }
+                else if (chr >= 'A' && chr <= 'Z') {
+                    count[1]++;
+                }
+                else if (chr >= '0' && chr <= '9') {
+                    count[2]++;
+                }
+                else {
+                    count[3]++;
+                }
+            }
+
+            for(int i=0; i<count.length; i++) {
+                sb.append(count[i]).append(' ');
+            }
+            sb.append('\n');
+
+            count[0] = 0; count[1] = 0; count[2] = 0; count[3] = 0;
+        }
+
+        System.out.println(sb);
+    }
+}
+```
+---
+## 단어 길이 재기 (2743번)
+https://www.acmicpc.net/problem/2743
+
+### 풀이방법
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println(br.readLine().length());
+        
+    }
+}
+```
+---
