@@ -585,3 +585,127 @@ public class Main {
 }
 ```
 ---
+## 소수 찾기 (1978번)
+https://www.acmicpc.net/problem/1978
+
+### 풀이방법 (1)
+- 루트를 이용한 풀이
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int num = 0;
+        int count = 0;
+        while(st.hasMoreTokens()) {
+            num = Integer.parseInt(st.nextToken());
+            if (isPrime(num)) {
+                count++;
+            }
+        }
+
+        System.out.println(count);
+    }
+    
+    public static boolean isPrime(int num) {
+        if (num == 1) {
+            return false;
+        }
+        
+        for(int i=2; i*i<=num; i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        
+        return true;
+    }
+}
+```
+
+### 풀이방법 (2)
+- 에라토스테네스의 체 이용한 풀이
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        boolean[] checkedPrime = erathosthenes(1000);
+        int num = 0;
+
+        int count = 0;
+        while(st.hasMoreTokens()) {
+            num = Integer.parseInt(st.nextToken());
+            if (!checkedPrime[num]) {
+                count++;
+            }
+        }
+
+        System.out.println(count);
+    }
+
+    public static boolean[] erathosthenes(int maxNum) {
+        int[] prime = new int[maxNum];
+        boolean[] checkedPrime = new boolean[maxNum + 1];
+        checkedPrime[0] = true; // 0
+        checkedPrime[1] = true; // 1 은 소수가 아니므로
+
+        for(int i=0; i<maxNum; i++) {
+            prime[i] = (i+1);
+        }
+
+        for(int i=2; i<=maxNum; i++) {
+            if (!checkedPrime[i]) {
+                for(int j=i*i; j<=maxNum; j+=i) {
+                    checkedPrime[j] = true;
+                }
+            }
+        }
+
+        return checkedPrime;
+    }
+}
+```
+---
+## 팩토리얼 0의 개수 (1676번)
+https://www.acmicpc.net/problem/1676
+
+### 풀이방법
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        int N = Integer.parseInt(br.readLine());
+        // 뒤 숫자가 0이 나오려면 2*5 형태가 있어야 함
+        // 5의 개수는 2의 개수보다 작음 (2는 N까지의 모든 짝수이고 5는 5의 배수일 뿐이니까)
+        // 25, 50, 75, 100는 5가 1번 더 들어감 (25 = 5 * 5, 50 = 5 * 5 * 2, ...)
+        // 따라서, 5의 거듭제곱만큼 계속 나누면 됨
+        int sum = 0;
+        for(int i=5; i<=N; i*=5) {
+            sum += (N / i);
+        }
+
+        System.out.println(sum);
+    }
+}
+```
+---

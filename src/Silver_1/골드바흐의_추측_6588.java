@@ -1,64 +1,10 @@
-# 백준 문제풀이 (Silver 1)
+package Silver_1;
 
----
-## 물병 (1052번)
-### 재풀이 예정
-- 성능 최적화 필요
-
-https://www.acmicpc.net/problem/1052
-
-### 풀이방법
-```java
-import java.io.*;
-import java.util.*;
-
-public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
-
-        int N = Integer.parseInt(st.nextToken());
-        int K = Integer.parseInt(st.nextToken());
-
-        int oneCountFromBinary = 0;
-        int tmp = N;
-        do {
-            oneCountFromBinary = getOneCountFromBinary(N++);
-            if (oneCountFromBinary <= K) {
-                break;
-            }
-        }while(oneCountFromBinary > K);
-
-        System.out.println(N - tmp - 1);
-    }
-    
-    // 1의 개수가 현재 물이있는 통의 개수가 됨
-    // 13 -> 1101 -> 3개의 물통
-    // 따라서 2진수로 변환할 때 1의 총 개수를 구함
-    private static int getOneCountFromBinary(int num) {
-        int oneCount = 0;
-        while(num != 0) {
-            if (num % 2 == 1) {
-                oneCount++;
-            }
-            num /= 2;
-        }
-
-        return oneCount;
-    }
-}
-```
----
-## 골드바흐의 추측 (6588번)
-https://www.acmicpc.net/problem/6588
-
-### 풀이방법
-```java
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class Main {
+public class 골드바흐의_추측_6588 {
     // 10^18 이하에서는 추측이 참이 됨 (위키참조)
     // n은 100만까지 이므로 10^18 이하여서 소수의 합으로 나타낼 수 없는 경우는 없음
     public static void main(String[] args) throws IOException {
@@ -106,5 +52,3 @@ public class Main {
         return checkedPrime;
     }
 }
-```
----
