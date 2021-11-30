@@ -135,3 +135,140 @@ public class Main {
 }
 ```
 ---
+## 다리 놓기 (1010번)
+https://www.acmicpc.net/problem/1010
+
+### 사전지식
+- 동적계획법 (다이나믹 프로그래밍, DP)
+
+### 풀이방법
+- 1~30까지의 모든 경우의 수를 조합
+- memoization을 이용해 풀이
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    static int[][] dp = new int[31][31];
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
+
+        StringTokenizer st = null;
+        int eastCount = 0;
+        int westCount = 0;
+
+        for(int r=1; r<=30; r++) {
+            for(int n=r; n<=30; n++) {
+                dp[n][r] = combination(n, r);
+            }
+        }
+
+        StringBuilder sb = new StringBuilder();
+        while (T-- > 0) {
+            st = new StringTokenizer(br.readLine());
+            westCount = Integer.parseInt(st.nextToken());
+            eastCount = Integer.parseInt(st.nextToken());
+            sb.append(dp[eastCount][westCount]).append('\n');
+        }
+
+        System.out.println(sb);
+    }
+
+    public static int combination(int n, int r) {
+        if (dp[n][r] > 0) {
+            return dp[n][r];
+        }
+
+        if (n == r || r == 0) {
+            return 1;
+        }
+
+        return combination(n-1, r-1) + combination(n-1, r);
+    }
+}
+```
+---
+## 거스름돈 (14916번)
+https://www.acmicpc.net/problem/14916
+
+### 풀이방법
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int money = Integer.parseInt(br.readLine());
+
+        int countOfFive = 0;
+        int countOfTwo = 0;
+
+        while(money != 0) {
+            if (money % 5 == 0) {
+                countOfFive = money / 5;
+                break;
+            }
+            else if (money < 2) {
+                System.out.println(-1);
+                return;
+            }
+            else {
+                money -= 2;
+                countOfTwo++;
+            }
+        }
+
+        System.out.println(countOfFive + countOfTwo);
+    }
+}
+```
+---
+## 파스칼 삼각형 (15489번)
+https://www.acmicpc.net/problem/15489
+
+### 풀이방법
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int R = Integer.parseInt(st.nextToken());
+        int C = Integer.parseInt(st.nextToken());
+        int W = Integer.parseInt(st.nextToken());
+
+        int[][] dp = new int[R+W][R+W];
+        for(int i=1; i<=R+W-1; i++) {
+            dp[i][1] = 1; // 줄의 첫번째 데이터는 1이 되어야 함
+            for(int j=1; j<=i; j++) {
+                dp[i][j] = dp[i-1][j-1] + dp[i-1][j];
+            }
+            dp[i][i] = 1; // 줄의 마지막 데이터는 1이 되어야 함
+        }
+
+        int sum = 0;
+        int sumCount = C;
+        for(int i=R; i<=R+W-1; i++) {
+            for(int j=C; j<=sumCount; j++) {
+                sum += dp[i][j];
+            }
+            sumCount++;
+        }
+
+        System.out.println(sum);
+    }
+}
+```
+---

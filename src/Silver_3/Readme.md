@@ -440,3 +440,153 @@ public class Main {
     }
 }
 ```
+---
+## 2 X n 타일링 (11726번)
+https://www.acmicpc.net/problem/11726
+
+### 풀이방법
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        if (n < 3) {
+            System.out.println(n);
+            return;
+        }
+        
+        int[] dp = new int[n+1];
+        dp[1] = 1;
+        dp[2] = 2;
+        for(int i=3; i<=n; i++) {
+            dp[i] = dp[i-1] + dp[i-2];
+            dp[i] %= 10007;
+        }
+
+        System.out.println(dp[n]);
+    }
+}
+```
+---
+## 2 X n 타일링 2 (11727번)
+https://www.acmicpc.net/problem/11727
+
+### 풀이방법
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        if (n<=3) {
+            if (n == 1) {
+                System.out.println(1);
+            }
+            else if (n == 2) {
+                System.out.println(3);
+            }
+            else {
+                System.out.println(5);
+            }
+
+            return;
+        }
+
+        int[] dp = new int[n+1];
+        dp[1] = 1; dp[2] = 3; dp[3] = 5;
+        for(int i=4; i<=n; i++) {
+            dp[i] = dp[i-1] + 2 * dp[i-2];
+            dp[i] %= 10007;
+        }
+
+        System.out.println(dp[n]);
+    }
+}
+```
+---
+## 1, 2, 3 더하기 (9095번)
+https://www.acmicpc.net/problem/9095
+
+### 풀이방법
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
+        int n = 0;
+        int[] dp = new int[11 + 1];
+        
+        dp[1] = 1; dp[2] = 2; dp[3] = 4;
+        for(int i=4; i<dp.length; i++) {
+            dp[i] = dp[i-1] + dp[i-2] + dp[i-3];
+        }
+        
+        StringBuilder sb = new StringBuilder();
+        while(T-- > 0) {
+            n = Integer.parseInt(br.readLine());
+            sb.append(dp[n]).append('\n');
+        }
+        
+        System.out.println(sb);
+    }
+}
+```
+---
+## 이친수 (2193번)
+https://www.acmicpc.net/problem/2193
+
+### 풀이방법
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        
+        if (N == 1) {
+            System.out.println(1);
+            return;
+        }
+        
+        // 점화식
+        // 1. dp[N][0] = DP[N-1][0] + DP[N-1][1]
+        //    끝자리가 0일 때 앞자리엔 0과 1이 올 수 있으므로
+        //
+        // 2. dp[N][1] = DP[N-1][0]
+        //    끝자리가 1일 때 앞자리엔 0만 올 수 있으므로
+
+        // 구현의 편의를 위해 +1
+        // N+1 : 길이
+        // 2   : N 위치에 가능한 숫자 개수
+        long[][] dp = new long[N+1][2];
+        // 첫번째 자리에는 0이 올 수 없음
+        dp[1][0] = 0;
+        dp[1][1] = 1;
+        // N이 2일 경우 10만 가능
+        dp[2][1] = 0;
+        dp[2][0] = 1;
+
+        for(int i=3; i<=N; i++) {
+            dp[i][0] = dp[i-1][0] + dp[i-1][1];
+            dp[i][1] = dp[i-1][0];
+        }
+
+        System.out.println(dp[N][0] + dp[N][1]);
+    }
+}
+```
+---

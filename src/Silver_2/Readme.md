@@ -175,3 +175,163 @@ public class Main {
 }
 ```
 ---
+## 1, 2, 3 더하기 5 (15990번)
+https://www.acmicpc.net/problem/15990
+
+### 풀이방법
+- n이 3, 4, 5, 6, 7, ...일 때의 수식을 써보면
+n번째에 어떤 수식들이 있는지 유추 가능함
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    private static final int MOD_VALUE = 1_000_000_009;
+    
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
+
+        int n = 0;
+        long[][] dp = new long[100000 + 1][4];
+        // n이 1일 때 수식의 끝자리가 1, 2, 3의 개수
+        dp[1][1] = 1; dp[1][2] = 0; dp[1][3] = 0;
+        // n이 2일 때 수식의 끝자리가 1, 2, 3의 개수
+        dp[2][1] = 0; dp[2][2] = 1; dp[2][3] = 0;
+        // n이 3일 때 수식의 끝자리가 1, 2, 3의 개수
+        dp[3][1] = 1; dp[3][2] = 1; dp[3][3] = 1;
+        for(int i=4; i<=100_000; i++) {
+            dp[i][1] = (dp[i-1][2] + dp[i-1][3])%MOD_VALUE;
+            dp[i][2] = (dp[i-2][1] + dp[i-2][3])%MOD_VALUE;
+            dp[i][3] = (dp[i-3][1] + dp[i-3][2])%MOD_VALUE;
+        }
+
+        StringBuilder sb = new StringBuilder();
+        while(T-- > 0) {
+            n = Integer.parseInt(br.readLine());
+            sb.append((dp[n][1] + dp[n][2] + dp[n][3])%MOD_VALUE).append('\n');
+        }
+
+        System.out.println(sb);
+    }
+}
+```
+---
+## 가장 긴 증가하는 부분 수열 (11053번)
+https://www.acmicpc.net/problem/11053
+
+### 사전지식
+- 다이나믹 프로그래밍
+
+### 시행착오
+1. 수열은 특정 규칙에 따라 수가 나열된 것을 의미하는 줄 알았으나, [위키](https://ko.wikipedia.org/wiki/%EC%88%98%EC%97%B4) 에 따르면 규칙이 없이 수들이 나열된 것도 수열이라고 한다.
+2. 처음 문제를 접했을 때 단순히 현재값이 이전값보다 클 경우 길이를 하나씩 증가시켜주면 될 줄 알았다.<br>
+  위 방법대로 풀었을 경우 `10 30 20 25` 의 경우에 `10 30`으로 2가 나오게 된다. 그러나 정답은 `10 20 25`로 3이 되어야 한다.
+
+
+### 풀이방법
+- 현재값(i)이 제시된 수열중에서 가장 큰 값이라고 가정하고 문제를 푼다.
+- 현재값 위치보다 작은 곳에 위치한 값(j)들을 비교해서 현재값보다 작다면 부분 수열이 가능하다는 것이 된다.
+- 위와 같은 방법을 반복하면 `numbers[i]`가 가장 큰 부분 수열의 길이를 알 수 있다. <br>
+10 | 20 | 10 | 30 | 20 | 50<br>
+1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4<br>
+10이 가장 큰 부분 수열의 길이는 1 (10)<br>
+20이 가장 큰 부분 수열의 길이는 2 (10, 20)<br>
+10이 가장 큰 부분 수열의 길이는 1 (10)<br>
+30이 가장 큰 부분 수열의 길이는 3 (10, 20, 30) - 20은 (10, 20)을 포함하므로<br>
+20이 가장 큰 부분 수열의 길이는 2 (10, 20)<br>
+50이 가장 큰 부분 수열의 길이는 4 (10, 20, 30, 50)
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int[] numbers = new int[N];
+        int[] dp = new int[N];
+        int index = 0;
+        while(st.hasMoreTokens()) {
+            numbers[index] = Integer.parseInt(st.nextToken());
+            dp[index] = 1;
+            index++;
+        }
+
+        int max = 1;
+        for(int i=0; i<N; i++) {
+            for(int j=0; j<i; j++) {
+                if (numbers[j] < numbers[i]) {
+                    max = Math.max(dp[i] + dp[j], max);
+                }
+            }
+            dp[i] = max;
+            max = 1;
+        }
+
+        int result = 0;
+        for(int i=0; i<N; i++) {
+            if (dp[i] > result) {
+                result = dp[i];
+            }
+        }
+
+        System.out.println(result);
+    }
+}
+```
+---
+## 연속합 (1912번)
+https://www.acmicpc.net/problem/1912
+
+### 풀이방법
+- 점화식 정의
+  1. 선택된 숫자가 마지막으로 선택된 숫자인 경우<br>
+  `dp[i] = dp[i-1] + arr[i]`
+  2. 새롭게 연속합이 시작될 경우<br>
+  `dp[i] = arr[i]`
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int n = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        // 점화식
+        // 1. 선택된 숫자가 마지막으로 선택된 숫자인 경우
+        //    dp[i] = dp[i-1] + arr[i]
+        // 2. 새롭게 연속합이 시작될 경우
+        //    dp[i] = A[i]
+        // 최대합을 구해야 하므로 1, 2를 비교해서 큰 값을 저장
+
+        int[] dp = new int[n+1];
+        int[] numbers = new int[n+1];
+        int index = 1;
+        while (st.hasMoreTokens()) {
+            numbers[index++] = Integer.parseInt(st.nextToken());
+        }
+
+        int max = (-1) * Integer.MAX_VALUE;
+        for(int i=1; i<=n; i++) {
+            dp[i] = Math.max(dp[i-1] + numbers[i], numbers[i]);
+            max = Math.max(dp[i], max);
+        }
+
+        System.out.println(max);
+    }
+}
+```
+---

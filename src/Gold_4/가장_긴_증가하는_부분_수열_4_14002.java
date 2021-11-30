@@ -1,72 +1,11 @@
-# 백준 문제풀이 (Gold 4)
+package Gold_4;
 
----
-
-## 오큰수 (17298번)
-https://www.acmicpc.net/problem/17298
-
-### 풀이방법
-```java
-import java.io.IOException;
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.util.Stack;
-import java.util.StringTokenizer;
-
-public class Main {
-    public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
-        StringTokenizer st = new StringTokenizer(br.readLine());
-        Stack<Integer> stack = new Stack<>();
-        int[] arr = new int[N];
-        int[] result = new int[N];
-        
-        int index = 0;
-        while(st.hasMoreTokens()) {
-            arr[index++] = Integer.parseInt(st.nextToken());
-        }
-        
-        stack.push(0);
-        for(int i=1; i<N; i++) {
-            if (stack.isEmpty()) {
-                stack.push(i);
-            }
-            
-            while (!stack.isEmpty() && arr[stack.peek()] < arr[i]) {
-                result[stack.pop()] = arr[i];
-            }
-            stack.push(i);
-        }
-        
-        while(!stack.isEmpty()) {
-            result[stack.pop()] = -1;
-        }
-        
-        StringBuilder sb = new StringBuilder();
-        for(int i=0; i<N; i++) {
-            sb.append(result[i]).append(' ');
-        }
-        
-        System.out.println(sb);
-    }
-}
-```
----
-## 가장 긴 증가하는 부분 수열 4 (14002번)
-https://www.acmicpc.net/problem/14002
-
-### 풀이방법
-- [가장 긴 증가하는 부분 수열](https://boj.kr/11053) 응용 문제
-- 배열을 이용해 위치 저장 후 재귀호출로 순서대로 출력
-
-```java
 import java.io.IOException;
-import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main {
+public class 가장_긴_증가하는_부분_수열_4_14002 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
@@ -125,5 +64,3 @@ public class Main {
         sb.append(numbers[index]).append(' ');
     }
 }
-```
----

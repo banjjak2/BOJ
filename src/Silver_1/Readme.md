@@ -108,3 +108,130 @@ public class Main {
 }
 ```
 ---
+## 카드 구매하기 (11052번)
+https://www.acmicpc.net/problem/11052
+
+### 풀이방법
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int[] P = new int[N + 1];
+        int[] dp = new int[N + 1];
+        for(int i=1; i<=N; i++) {
+            P[i] = Integer.parseInt(st.nextToken());
+        }
+
+        // 중복이 허용되니까 1
+        for(int i=1; i<=N; i++) {
+            for(int j=1; j<=i; j++) {
+                // 새로운 누적값과 이전 누적값 비교
+                /* N = 4,
+                    1) 1   1   1   1
+                    2) 1   1   2
+                    3) 1   3
+                    4) 4
+                    비교해야 함
+                 */
+                dp[i] = Math.max(dp[i], dp[i-j] + P[j]);
+            }
+        }
+
+        System.out.println(dp[N]);
+    }
+}
+```
+---
+## 카드 구매하기 2 (16194번)
+https://www.acmicpc.net/problem/16194
+
+### 풀이방법
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int[] P = new int[N + 1];
+        int[] dp = new int[N + 1];
+        for(int i=1; i<=N; i++) {
+            P[i] = Integer.parseInt(st.nextToken());
+            dp[i] = Integer.MAX_VALUE;
+        }
+
+        // 중복이 허용되니까 1
+        for(int i=1; i<=N; i++) {
+            for(int j=1; j<=i; j++) {
+                dp[i] = Math.min(dp[i], dp[i-j] + P[j]);
+            }
+        }
+
+        System.out.println(dp[N]);
+    }
+}
+```
+---
+## 쉬운 계단 수 (10844번)
+
+
+### 풀이방법
+- 점화식 : `dp[N] = d[N-1][L-1] + d[N-1][L+1]`<br>
+N : 길이<br>
+L : 마지막 수<br>
+L - 1 : 1, 2, 3일 때<br>
+L + 1 : 3, 2, 1일 때<br>
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    private static final int MOD_VALUE = 1_000_000_000;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+
+        long[][] dp = new long[N+1][10];
+        // 길이가 1일 때
+        for(int i=1; i<=9; i++) {
+            dp[1][i] = 1;
+        }
+
+        for(int i=2; i<=N; i++) {
+            for(int j=0; j<=9; j++) {
+                dp[i][j] = 0;
+                if (j-1 >= 0) {
+                    dp[i][j] += dp[i-1][j-1];
+                }
+                if (j+1 <= 9) {
+                    dp[i][j] += dp[i-1][j+1];
+                }
+                dp[i][j] %= MOD_VALUE;
+            }
+        }
+
+        long result = 0;
+        for(int i=0; i<=9; i++) {
+            result += dp[N][i];
+        }
+
+        System.out.println(result%MOD_VALUE);
+    }
+}
+```
+---
