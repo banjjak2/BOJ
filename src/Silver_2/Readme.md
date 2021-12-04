@@ -335,3 +335,178 @@ public class Main {
 }
 ```
 ---
+## 1, 2, 3 더하기 3 (15988번)
+https://www.acmicpc.net/problem/15988
+
+### 사전지식
+- 다이나믹 프로그래밍
+
+### 풀이방법
+```text
+n = 1,
+ => 1
+ 
+n = 2,
+ => 1 + 1
+    2
+
+n = 3,
+ => 1 + 1 + 1
+    2 + 1
+    1 + 2
+    3
+    
+n = 4,
+ => 1 + 1 + 1 + 1
+    3 + 1
+    1 + 2 + 1
+    2 + 1 + 1
+    1 + 1 + 2
+    2 + 2
+    1 + 3
+...
+```
+`n`이 `4`일 때의 `1 + 1 + 1 + 1` 은 `n`이 `3`일 때의 `1 + 1 + 1`을 포함하고 있음<br>
+`n`이 `4`일 때의 `3 + 1`은 `n`이 `3`일 때의 `3`을 포함하고 있음<br>
+`n`이 `4`일 때의 `1 + 2 + 1`은 `n`이 `3`일 때의 `1 + 2`를 포함하고 있음<br>
+`n`이 `4`일 때의 `2 + 1 + 1`은 `n`이 `3`일 때의 `2 + 1`을 포함하고 있음<br>
+`n`이 `4`일 때의 `1 + 1 + 2`은 `n`이 `2`일 때의 `1 + 1`을 포함하고 있음<br>
+`n`이 `4`일 때의 `2 + 2`은 `n`이 `2`일 때의 `2`를 포함하고 있음<br>
+`n`이 `4`일 때의 `1 + 3`은 `n`이 `1`일 때의 `1`를 포함하고 있음<br>
+
+즉, <br>
+`n`이 `4`일 때 수식의 끝 자리가 `1`이면 n이 `3`일 때 나오는 수식을 모두 포함<br>
+`n`이 `4`일 때 수식의 끝 자리가 `2`이면 n이 `2`일 때 나오는 수식을 모두 포함<br>
+`n`이 `4`일 때 수식의 끝 자리가 `3`이면 n이 `1`일 때 나오는 수식을 모두 포함<br>
+
+위 공식에 따라 1, 2, 3을 제외한 n의 값이 4, 5, 6, 7, ... 일 때를 검증해보면 답을 구할 수 있음
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    private static final int MAX_VALUE = 1_000_000;
+    private static final int MOD_VALUE = 1_000_000_009;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
+        long[] dp = new long[MAX_VALUE + 1];
+        dp[1] = 1; dp[2] = 2; dp[3] = 4;
+
+        for(int i=4; i<=MAX_VALUE; i++) {
+            dp[i] = (dp[i-3] + dp[i-2] + dp[i-1]) % MOD_VALUE;
+        }
+
+        int n = 0;
+        StringBuilder sb = new StringBuilder();
+        while(T-- > 0) {
+            n = Integer.parseInt(br.readLine());
+            sb.append(dp[n]).append('\n');
+        }
+
+        System.out.println(sb);
+    }
+}
+```
+---
+## 가장 큰 증가 부분 수열 (11055번)
+https://www.acmicpc.net/board/view/67313
+
+### 풀이방법
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    int N = Integer.parseInt(br.readLine());
+    int[] arr = new int[N+1];
+    int[] dp = new int[N+1];
+
+    StringTokenizer st = new StringTokenizer(br.readLine());
+    for(int i=1; i<=N; i++) {
+      arr[i] = Integer.parseInt(st.nextToken());
+      dp[i] = arr[i];
+    }
+
+    int max = arr[1];
+    for(int i=2; i<=N; i++) {
+      for(int j=1; j<i; j++) {
+        if (arr[i] > arr[j]) {
+          if (dp[i] < dp[j] + arr[i]) {
+            dp[i] = dp[j] + arr[i];
+            max = Math.max(dp[i], max);
+          }
+        }
+      }
+    }
+
+    System.out.println(max);
+  }
+}
+```
+---
+## 가장 긴 감소하는 부분 수 (11722번)
+https://www.acmicpc.net/problem/11722
+
+### 풀이방법
+- 점화식
+  ```text
+  dp[i] = arr[i]로 끝나면서 가장 긴 감소하는 부분 수열
+  arr[1] ~ arr[i-1]까지 비교하면서 감소하는 구간을 찾음
+  인덱스      :  1  2  3  4  5  6
+  수열 arr   : 10 30 10 20 20 10
+  감소횟수(dp) : 1  1  2  2  2  3
+  
+  arr[i]가 30(인덱스 2)일 때 arr[1] ~ arr[i-1]중 감소하는 구간은 없음
+  arr[i]가 10(인덱스 3)일 때 arr[1] ~ arr[i-1]중 감소하는 구간은 (30, 10)
+  arr[i]가 20(인덱스 4)일 때 arr[1] ~ arr[i-1]중 감소하는 구간은 (30, 20)
+  arr[i]가 10(인덱스 6)일 때 arr[1] ~ arr[i-1]중 감소하는 구간은 (30, 20, 10)
+  
+  따라서, arr[i]는 arr[1] ~ arr[i-1]까지 몇 번 감소했는지 알아내야 함
+  ```
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        
+        int[] arr = new int[N+1];
+        int[] dp = new int[N+1];
+        for(int i=1; i<=N; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+            dp[i] = 1;
+        }
+        
+        int max = 1;
+        for(int i=1; i<=N; i++) {
+            for(int j=1; j<=i; j++) {
+                // 감소하는 구간을 찾아야 하므로
+                if (arr[i] < arr[j]) {
+                    // dp[j] + 1이 dp[i]보다 크면 앞쪽에서 최대값을 아직 뽑지 않았다는 것이 됨
+                    // 예를들어, arr[i]가 예제 수열의 맨 마지막(10) 일 때 앞쪽 감소횟수를 하나씩 더해보면서 최대값을 찾음
+                    if (dp[i] < dp[j] + 1) {
+                        dp[i] = dp[j] + 1;
+                        max = Math.max(dp[i], max);
+                    }
+                }
+            }
+        }
+        
+        System.out.println(max);
+    }
+}
+```
+---

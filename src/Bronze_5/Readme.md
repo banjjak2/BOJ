@@ -1088,3 +1088,28 @@ public class 세금_20492 {
 }
 ```
 ---
+## 큰 수 (BIG) (14928번)
+https://www.acmicpc.net/problem/14928
+
+### 풀이방법
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String str = br.readLine();
+
+        // 수학에서 나눗셈을 구하듯이 구현
+        int result = 0;
+        for(int i=0; i<str.length(); i++) {
+            result = (result * 10 + str.charAt(i) - '0') % 20000303;
+        }
+
+        System.out.println(result);
+    }
+}
+```
+---
