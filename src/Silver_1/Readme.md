@@ -600,3 +600,41 @@ public class Main {
 }
 ```
 ---
+## 타일 채우기 (2133번)
+https://www.acmicpc.net/problem/2133
+
+### 풀이방법
+![풀이](https://imgur.com/a/OX8itxW)
+- 위와 같은 방법을 손으로 풀다보면 알 수 있다.
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int N = Integer.parseInt(br.readLine());
+
+        if (N == 1) {
+            System.out.println(0);
+            return;
+        }
+
+        int[] dp = new int[N+1];
+        dp[0] = 1;
+        dp[2] = 3;
+
+        for(int i=4; i<=N; i+=2) {
+            dp[i] = dp[i-2] * 3;
+            for(int j=i-4; j>=0; j-=2) {
+                dp[i] += dp[j] * 2;
+            }
+        }
+
+        System.out.println(dp[N]);
+    }
+}
+```
+---
