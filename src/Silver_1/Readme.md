@@ -604,7 +604,7 @@ public class Main {
 https://www.acmicpc.net/problem/2133
 
 ### 풀이방법
-![풀이](https://imgur.com/a/OX8itxW)
+![풀이](https://i.imgur.com/JrxpmSq.jpeg)
 - 위와 같은 방법을 손으로 풀다보면 알 수 있다.
 
 ```java
