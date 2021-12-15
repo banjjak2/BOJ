@@ -272,3 +272,51 @@ public class Main {
 }
 ```
 ---
+## 날짜 계산 (1476번)
+https://www.acmicpc.net/problem/1476
+
+### 풀이방법
+- E, S, M의 값이 범위에서 벗어나면 1로 초기화해서 정답이 나올 때까지 반복함
+- 나머지를 이용해서도 구할 수 있다고 함
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        
+        int[] esm = new int[3];
+        int[] tmpesm = new int[3];
+        for(int i=0; i<3; i++) {
+            esm[i] = Integer.parseInt(st.nextToken());
+            tmpesm[i] = 1;
+        }
+        
+        int years = 1;
+        while(true) {
+            if (tmpesm[0] == esm[0] && tmpesm[1] == esm[1] && tmpesm[2] == esm[2]) {
+                break;
+            }
+            
+            if (++tmpesm[0] > 15) {
+                tmpesm[0] = 1;
+            }
+            if (++tmpesm[1] > 28) {
+                tmpesm[1] = 1;
+            }
+            if (++tmpesm[2] > 19) {
+                tmpesm[2] = 1;
+            }
+            years++;
+        }
+        
+        System.out.println(years);
+    }
+}
+```
+---
