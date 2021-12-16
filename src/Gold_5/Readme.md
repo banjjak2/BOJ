@@ -99,3 +99,96 @@ public class Main {
 }
 ```
 ---
+## 리모컨 (1107번)
+https://www.acmicpc.net/problem/1107
+
+### 풀이방법
+- +, -로 이동하는 것이 제일 빠를 경우로 채널값에서 100을 뺌
+- 고장난 버튼들은 `true`로 설정
+- 값이 `500,000`까지지만 고장난 번호가 `0, 2, 3, 4, 6, 7, 8, 9`일 경우 `511,111`에서 움직이는 것이 더 최소이므로 최대 `1,000,000`까지 설정
+- `0~1,000,000`까지 돌면서 각 자리수가 고장난 버튼에 포함되는지 확인하고 포함될 경우 다음 숫자로 넘어감
+- 포함되지 않을 경우 설정한 채널 번호에서 현재 돌고있는 채널값을 빼고 현재 돌고있는 채널의 길이를 더해주어야 정답이 됨 (예제 참고)
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int targetChannel = Integer.parseInt(br.readLine());
+        int brokenButtonCount = Integer.parseInt(br.readLine());
+        boolean[] brokenButtons = new boolean[10];
+        int min = Math.abs(targetChannel - 100);
+
+        if (brokenButtonCount > 0) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+
+            if (targetChannel == 100) {
+                System.out.println(0);
+                return;
+            }
+
+            int index = 0;
+            while (st.hasMoreTokens()) {
+                index = Integer.parseInt(st.nextToken());
+                brokenButtons[index] = true;
+            }
+        }
+
+        int i = 0;
+        for(i=0; i<1_000_000; i++) {
+            if (isBrokenButtonPressed(i, brokenButtons)) {
+                continue;
+            }
+
+            min = Math.min(min, Math.abs(targetChannel - i) + intLen(i));
+        }
+
+        System.out.println(min);
+    }
+
+    private static boolean isBrokenButtonPressed(int num, boolean[] brokenButtons) {
+        for(int i=0; i<intLen(num); i++) {
+            if (brokenButtons[getIntPosition(num, i)]) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static int getIntPosition(int num, int position) {
+        int r = 0;
+        while (position-- >= 0) {
+            r = num % 10;
+            while (true) {
+                if (r < 10) {
+                    break;
+                }
+
+                r = r % 10;
+            }
+            num /= 10;
+        }
+
+        return r;
+    }
+
+    private static int intLen(int num) {
+        if (num < 10) {
+            return 1;
+        }
+
+        int count = 0;
+        while (num > 0) {
+            num /= 10;
+            count++;
+        }
+
+        return count;
+    }
+}
+```
+---
