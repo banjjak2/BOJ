@@ -769,3 +769,43 @@ public class Main {
 }
 ```
 ---
+## 수 이어쓰기 1 (1748번)
+https://www.acmicpc.net/problem/1748
+
+### 풀이방법
+- 123까지의 모든 수를 이어쓴다고 할 때, 먼저 1~99까지의 모든 수를 구한다.
+- 123은 세자리 수 이므로 100부터 시작하기 때문에 123-100=23이 된다.
+- 따라서 1~9까지의 자리수, 10~99까지의 자리수, 100~123까지의 자리수를 구해 모두 더해야 한다.
+- 1~9는 자리수가 각각 1자리이며, 10~99는 자리수가 2자리, 100~123은 자리수가 3자리 이므로 합계를 구할 때 자리수를 곱해주어야 한다.
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String N = br.readLine();
+        int numberN = Integer.parseInt(N);
+
+        long start = 0;
+        long end = 0;
+        long sum = 0;
+        for(int i=0; i<N.length(); i++) {
+            start = (long)Math.pow(10, i);
+            end = (long)Math.pow(10, i+1)-1;
+
+            if (end > numberN) {
+                sum += ((numberN - start + 1) * (i+1));
+            }
+            else {
+                sum += ((end - start + 1) * (i+1));
+            }
+        }
+
+        System.out.println(sum);
+    }
+}
+```
+---
