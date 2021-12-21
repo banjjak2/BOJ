@@ -638,3 +638,89 @@ public class Main {
 }
 ```
 ---
+## 카잉 달력 (6064번)
+https://www.acmicpc.net/problem/6064
+
+### 주의사항
+- X+1 < M 이 아니라 X < M 인 것에 주의
+- Y+1 < M 이 아니라 Y < N 인 것에 주의
+- `<x:y>`에서 y값을 N값으로 나눴을 때 나머지가 0일 경우 예외 처리
+
+### 풀이방법
+- `M`이 `6`이고, `N`이 `4`일 때 숫자 1부터 계산해보면
+```text
+`1`일 때 `<1:1>`
+`2`일 때 `<2:2>`
+`3`일 때 `<3:3>`
+`4`일 때 `<4:4>`
+`5`일 때 `<5:1>`
+`6`일 때 `<6:2>`
+`7`일 때 `<1:3>`
+`8`일 때 `<2:4>`
+`9`일 때 `<3:1>`
+`10`일 때 `<4:2>`
+`11`일 때 `<5:3>`
+`12`일 때 `<6:4>` - x, y가 M, N과 같으므로 끝
+```
+- M, N, x, y를 각각 6, 4, 4, 2로 설정했을 때, `10`이 정답이 됨
+- 즉, x값이 4인 경우의 수들을 살펴보면 `4`, `10`일 때 `<4:4>, <4:2>` 이 된다.
+- y값은 년도값을 `N`으로 나눴을 때의 나머지 값이 됨을 알 수 있다.
+- 즉, `4(년도값)%4(N값) == 0`과 `10(년도값)%4(N값) == 2`이 되므로 
+`<4:2>`와 같기 위해서는 `10`번째 해가 된다.
+- 단, `<x:y>`에서 y값을 N값으로 나눴을 때 나머지가 0일 경우 예외 처리를 해주어야 한다.
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int T = Integer.parseInt(br.readLine());
+        StringTokenizer st = null;
+        int M, N, x, y;
+        boolean find = false;
+        StringBuilder sb = new StringBuilder();
+
+        // X < M 이면 X' = X + 1
+        // Y < M 이면 Y' = Y + 1
+
+        // X+1 < M 이 아니라 X < M 인 것에 주의
+        // Y+1 < M 이 아니라 Y < N 인 것에 주의
+        // <x:y>에서 y값을 N값으로 나눴을 때 나머지가 0일 경우 예외 처리
+
+        while (T-- > 0) {
+            find = false;
+            st = new StringTokenizer(br.readLine());
+            M = Integer.parseInt(st.nextToken());
+            N = Integer.parseInt(st.nextToken());
+            x = Integer.parseInt(st.nextToken());
+            y = Integer.parseInt(st.nextToken());
+
+            for(int i=x; i<(M*N); i+=M) {
+                if (i%N == y) {
+                    sb.append(i).append('\n');
+                    find = true;
+                    break;
+                }
+                else if (i%N == 0) {
+                    if (y == N) {
+                        sb.append(i).append('\n');
+                        find = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!find) {
+                sb.append(-1).append('\n');
+            }
+        }
+
+        System.out.println(sb);
+    }
+}
+```
+---
