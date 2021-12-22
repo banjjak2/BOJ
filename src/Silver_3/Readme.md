@@ -932,3 +932,58 @@ public class Main {
 }
 ```
 ---
+## N과 M (3) (15651번)
+https://www.acmicpc.net/problem/15651
+
+### 풀이방법
+- `solve` 함수의 전달인자는 다음과 같다.
+  1) 첫번째 : 데이터가 들어있는 배열
+  2) 두번째 : 몇 개를 고를 것인지에 대한 변수
+  3) 세번째 : 현재 뽑은 개수 및 데이터 저장 위치
+- 현재 뽑은 개수와 몇 개를 고를 것인지의 개수가 동일할 경우 결과값을 저장한다.
+- 같은 수를 여러번 고를 수 있으므로 방문했는지 확인할 필요가 없다.
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    private static StringBuilder sb = new StringBuilder();
+    private static int[] result = null;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        int[] arr = new int[N];
+        result = new int[M];
+
+        for(int i=0; i<N; i++) {
+            arr[i] = i+1;
+        }
+
+        solve(arr, M, 0);
+        System.out.println(sb);
+    }
+
+    private static void solve(int[] arr, int r, int c) {
+        if (c == r) {
+            for(int i : result) {
+                sb.append(i).append(' ');
+            }
+            sb.append('\n');
+            return;
+        }
+        else {
+            for(int i=0; i<arr.length; i++) {
+                result[c] = arr[i];
+                solve(arr, r, c+1);
+            }
+        }
+    }
+}
+```
+---
