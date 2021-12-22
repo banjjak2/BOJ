@@ -809,3 +809,64 @@ public class Main {
 }
 ```
 ---
+## N과 M (1) (15649번)
+https://www.acmicpc.net/problem/15649
+
+### 풀이방법
+- `solve` 함수의 전달인자는 다음과 같다.
+  1) 첫번째 : 데이터가 들어있는 배열
+  2) 두번째 : 이미 데이터를 사용했는지 확인하는 배열 (중복이 발생하면 안되므로)
+  3) 세번째 : 몇 개를 고를 것인지에 대한 변수
+  4) 네번째 : 현재 뽑은 개수 및 데이터 저장 위치
+- 현재 뽑은 개수와 몇 개를 고를 것인지의 개수가 동일할 경우 결과값을 저장한다.
+- 그렇지 않으면 데이터 배열 중 방문하지 않은 데이터를 저장한다.
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    private static StringBuilder sb = new StringBuilder();
+    private static int[] result = null;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        int[] arr = new int[N];
+        boolean[] visited = new boolean[N];
+        result = new int[M];
+        for(int i=0; i<N; i++) {
+            arr[i] = i+1;
+        }
+        solve(arr, visited, M, 0);
+
+        System.out.println(sb);
+    }
+
+    private static void solve(int[] arr, boolean[] visited, int r, int c) {
+        if (c == r) {
+            for(int i=0; i<result.length; i++) {
+                sb.append(result[i]).append(' ');
+            }
+            sb.append('\n');
+            return;
+        }
+        else {
+            for(int i=0; i<arr.length; i++) {
+                if (!visited[i]) {
+                    visited[i] = true;
+                    result[c] = arr[i];
+                    solve(arr, visited, r, c+1);
+                    visited[i] = false;
+                }
+            }
+        }
+    }
+}
+```
+---
