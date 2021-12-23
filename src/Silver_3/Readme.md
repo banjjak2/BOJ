@@ -1250,3 +1250,66 @@ public class Main {
 }
 ```
 ---
+## N과 M (8) (15657번)
+https://www.acmicpc.net/problem/15657
+
+### 풀이방법
+- `N과 M (4)`와 비슷하지만 데이터를 입력받는 부분이 추가되었다.
+- `solve` 함수의 전달인자는 다음과 같다.
+  1) 첫번째 : 데이터가 들어있는 배열
+  2) 두번째 : 현재 인덱스를 저장해 조합의 시작 위치를 지정하기 위한 변수
+  3) 세번째 : 몇 개를 고를 것인지에 대한 변수
+  4) 네번째 : 현재 뽑은 개수 및 데이터 저장 위치
+- 현재 뽑은 개수와 몇 개를 고를 것인지의 개수가 동일할 경우 결과값을 저장한다.
+- 같은 수를 여러번 고를 수 있으므로 방문했는지 확인할 필요가 없다.
+- 예제 2번을 보면 8로 시작할 때 8보다 작은 값은 표현하지 않아야 하므로 현재 인덱스는 반복문의 변수여야 한다.
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+import java.util.Arrays;
+
+public class Main {
+    private static StringBuilder sb = new StringBuilder();
+    private static int[] result = null;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        int[] arr = new int[N];
+        result = new int[M];
+
+        st = new StringTokenizer(br.readLine());
+        for(int i=0; i<N; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
+        }
+
+        Arrays.sort(arr);
+        solve(arr, 0, M, 0);
+
+        System.out.println(sb);
+    }
+
+    private static void solve(int[] arr, int curIndex, int r, int c) {
+        if (c == r) {
+            for(int i : result) {
+                sb.append(i).append(' ');
+            }
+            sb.append('\n');
+            return;
+        }
+        else {
+            for(int i=curIndex; i<arr.length; i++) {
+                result[c] = arr[i];
+                solve(arr, i, r, c+1);
+            }
+        }
+    }
+}
+```
+---
+
