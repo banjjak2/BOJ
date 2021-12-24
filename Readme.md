@@ -10,6 +10,7 @@
 - [설탕 배달 (2839)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_1#%EC%84%A4%ED%83%95-%EB%B0%B0%EB%8B%AC-2839%EB%B2%88)
 - [BABBA (9625)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_1#babba-9625%EB%B2%88)
 - [타일 장식물 (13301)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_1#%ED%83%80%EC%9D%BC-%EC%9E%A5%EC%8B%9D%EB%AC%BC-13301%EB%B2%88)
+
 ---
 
 ### Bronze 2
@@ -23,6 +24,7 @@
 - [2진수 8진수 (1373)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_2#2%EC%A7%84%EC%88%98-8%EC%A7%84%EC%88%98-1373%EB%B2%88)
 - [이름 궁합 (15312)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_2#%EC%9D%B4%EB%A6%84-%EA%B6%81%ED%95%A9-15312%EB%B2%88)
 - [일곱 난쟁이 (2309)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_2#%EC%9D%BC%EA%B3%B1-%EB%82%9C%EC%9F%81%EC%9D%B4-2309%EB%B2%88)
+
 ---
 
 ### Bronze 3
@@ -48,6 +50,7 @@
 - [분산처리 (1009)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_3#%EB%B6%84%EC%82%B0%EC%B2%98%EB%A6%AC-1009%EB%B2%88)
 - [점수계산 (2506)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_3#%EC%A0%90%EC%88%98%EA%B3%84%EC%82%B0-2506%EB%B2%88)
 - [네 수 (10824)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_3#%EB%84%A4-%EC%88%98-10824%EB%B2%88)
+
 ---
 
 ## Bronze 4
@@ -98,6 +101,7 @@
 - [헛간 청약 (19698)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_4#%ED%97%9B%EA%B0%84-%EC%B2%AD%EC%95%BD-19698%EB%B2%88)
 - [뉴비의 기준은 뭘까? (19944)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_4#%EB%89%B4%EB%B9%84%EC%9D%98-%EA%B8%B0%EC%A4%80%EC%9D%80-%EB%AD%98%EA%B9%8C-19944%EB%B2%88)
 - [Darius님 한타 안 함? (20499)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_4#darius%EB%8B%98-%ED%95%9C%ED%83%80-%EC%95%88-%ED%95%A8-20499%EB%B2%88)
+
 ---
 
 ### Bronze 5
@@ -144,6 +148,7 @@
 - [1998년생인 내가 태국에서는 2541년생?! (18108)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_5#1998%EB%85%84%EC%83%9D%EC%9D%B8-%EB%82%B4%EA%B0%80-%ED%83%9C%EA%B5%AD%EC%97%90%EC%84%9C%EB%8A%94-2541%EB%85%84%EC%83%9D-18108%EB%B2%88)
 - [세금 (20492)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_5#%EC%84%B8%EA%B8%88-20492%EB%B2%88)
 - [큰 수 (BIG) (14928)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_5#%ED%81%B0-%EC%88%98-big-14928%EB%B2%88)
+
 ---
 
 ## Silver 1
@@ -160,6 +165,7 @@
 - [정수 삼각형 (1932)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#%EC%A0%95%EC%88%98-%EC%82%BC%EA%B0%81%ED%98%95-1932%EB%B2%88)
 - [타일 채우기 (2133)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#%ED%83%80%EC%9D%BC-%EC%B1%84%EC%9A%B0%EA%B8%B0-2133%EB%B2%88)
 - [카잉 달력 (6064)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#%EC%B9%B4%EC%9E%89-%EB%8B%AC%EB%A0%A5-6064%EB%B2%88)
+
 ---
 
 ## Silver 2
@@ -172,6 +178,7 @@
 - [1,2,3 더하기 3 (15988)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#1-2-3-%EB%8D%94%ED%95%98%EA%B8%B0-3-15988%EB%B2%88)
 - [가장 큰 증가 부분 수열 (11055)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#%EA%B0%80%EC%9E%A5-%ED%81%B0-%EC%A6%9D%EA%B0%80-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4-11055%EB%B2%88)
 - [가장 긴 감소하는 부분 수 (11722)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#%EA%B0%80%EC%9E%A5-%EA%B8%B4-%EA%B0%90%EC%86%8C%ED%95%98%EB%8A%94-%EB%B6%80%EB%B6%84-%EC%88%98-11722%EB%B2%88)
+
 ---
 
 ## Silver 3
@@ -197,6 +204,7 @@
 - [N과 M (6) (15655)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#n%EA%B3%BC-m-6-15655%EB%B2%88)
 - [N과 M (7) (15656)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#n%EA%B3%BC-m-7-15656%EB%B2%88)
 - [N과 M (8) (15657)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#n%EA%B3%BC-m-8-15657%EB%B2%88)
+
 ---
 
 ## Silver 4
@@ -212,6 +220,7 @@
 - [-2진수 (2089)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_4#-2%EC%A7%84%EC%88%98-2089%EB%B2%88)
 - [돌 게임 2 (9656)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_4#%EB%8F%8C-%EA%B2%8C%EC%9E%84-2-9656%EB%B2%88)
 - [회전하는 큐 (1021)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_4#%ED%9A%8C%EC%A0%84%ED%95%98%EB%8A%94-%ED%81%90-1021%EB%B2%88)
+
 ---
 
 ## Silver 5
@@ -222,10 +231,12 @@
 - [거스름돈 (14916)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_5#%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88-14916%EB%B2%88)
 - [파스칼 삼각형 (15489)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_5#%ED%8C%8C%EC%8A%A4%EC%B9%BC-%EC%82%BC%EA%B0%81%ED%98%95-15489%EB%B2%88)
 - [날짜 계산 (1476)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_5#%EB%82%A0%EC%A7%9C-%EA%B3%84%EC%82%B0-1476%EB%B2%88)
+
 ---
 
 ## Gold 1
 - [진법 변환 (1112)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_1#%EC%A7%84%EB%B2%95-%EB%B3%80%ED%99%98-1112%EB%B2%88)
+
 ---
 
 ## Gold 2
@@ -236,11 +247,13 @@
 - [오등큰수 (17299)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_3#%EC%98%A4%EB%93%B1%ED%81%B0%EC%88%98-17299%EB%B2%88)
 - [후위 표기식 (1918)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_3#%ED%9B%84%EC%9C%84-%ED%91%9C%EA%B8%B0%EC%8B%9D-1918%EB%B2%88)
 - [가장 긴 바이토닉 부분 수열 (11054)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_3#%EA%B0%80%EC%9E%A5-%EA%B8%B4-%EB%B0%94%EC%9D%B4%ED%86%A0%EB%8B%89-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4-11054%EB%B2%88)
+
 ---
 
 ## Gold 4
 - [오큰수 (17298)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_4#%EC%98%A4%ED%81%B0%EC%88%98-17298%EB%B2%88)
 - [가장 긴 증가하는 부분 수열 4 (14002)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_4#%EA%B0%80%EC%9E%A5-%EA%B8%B4-%EC%A6%9D%EA%B0%80%ED%95%98%EB%8A%94-%EB%B6%80%EB%B6%84-%EC%88%98%EC%97%B4-4-14002%EB%B2%88)
+
 ---
 
 ## Gold 5
@@ -248,4 +261,5 @@
 - [연속합 2 (13398)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#%EC%97%B0%EC%86%8D%ED%95%A9-2-13398%EB%B2%88)
 - [리모컨 (1107)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#%EB%A6%AC%EB%AA%A8%EC%BB%A8-1107%EB%B2%88)
 - [테트로미노 (14500)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#%ED%85%8C%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8-14500%EB%B2%88)
+
 ---
