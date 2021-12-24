@@ -101,6 +101,7 @@
 - [헛간 청약 (19698)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_4#%ED%97%9B%EA%B0%84-%EC%B2%AD%EC%95%BD-19698%EB%B2%88)
 - [뉴비의 기준은 뭘까? (19944)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_4#%EB%89%B4%EB%B9%84%EC%9D%98-%EA%B8%B0%EC%A4%80%EC%9D%80-%EB%AD%98%EA%B9%8C-19944%EB%B2%88)
 - [Darius님 한타 안 함? (20499)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_4#darius%EB%8B%98-%ED%95%9C%ED%83%80-%EC%95%88-%ED%95%A8-20499%EB%B2%88)
+- [SASA 모형을 만들어보자 (23825)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_4#sasa-%EB%AA%A8%ED%98%95%EC%9D%84-%EB%A7%8C%EB%93%A4%EC%96%B4%EB%B3%B4%EC%9E%90-23825%EB%B2%88)
 
 ---
 
