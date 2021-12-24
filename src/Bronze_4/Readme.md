@@ -1564,3 +1564,28 @@ public class Main {
 }
 ```
 ---
+## SASA 모형을 만들어보자 (23825번)
+https://www.acmicpc.net/problem/23825
+
+### 풀이방법
+- 각각 2개씩 필요하므로 N과 M을 나누기 2를 했을 때 최소를 구하면 된다.
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+
+        System.out.println(Math.min(N/2, M/2));
+    }
+}
+```
+---
