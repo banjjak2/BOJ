@@ -181,6 +181,7 @@
 - [가장 긴 감소하는 부분 수 (11722)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#%EA%B0%80%EC%9E%A5-%EA%B8%B4-%EA%B0%90%EC%86%8C%ED%95%98%EB%8A%94-%EB%B6%80%EB%B6%84-%EC%88%98-11722%EB%B2%88)
 - [N과 M (9) (15663)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#n%EA%B3%BC-m-9-15663%EB%B2%88)
 - [N과 M (10) (15664)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#n과-m-10-15664번)
+- [N과 M (11) (15665)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#n과-m-11-15665번)
 
 ---
 
