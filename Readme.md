@@ -209,6 +209,7 @@
 - [N과 M (6) (15655)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#n%EA%B3%BC-m-6-15655%EB%B2%88)
 - [N과 M (7) (15656)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#n%EA%B3%BC-m-7-15656%EB%B2%88)
 - [N과 M (8) (15657)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#n%EA%B3%BC-m-8-15657%EB%B2%88)
+- [다음 순열 (10972)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#다음-순열-10972번)
 
 ---
 
