@@ -514,7 +514,7 @@ public class Main {
 ## 1, 2, 3 더하기 (9095번)
 https://www.acmicpc.net/problem/9095
 
-### 풀이방법
+### 풀이방법 (DP)
 ```java
 import java.io.IOException;
 import java.io.BufferedReader;
@@ -542,6 +542,49 @@ public class Main {
     }
 }
 ```
+
+### 풀이방법 (브루트 포스)
+- `1, 2, 3`을 계속 순회하면서 더한 값들이 `n`값이 되는지 확인하고 `n`보다 클 경우 `0`을 반환하여 
+카운트를 세지 않고 `n` 값이 되는 경우 카운트를 세기 위해 1을 반환한다.
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        int[] arr = {1, 2, 3};
+        int T = Integer.parseInt(br.readLine());
+        int n = 0;
+        StringBuilder sb = new StringBuilder();
+
+        while (T-- > 0) {
+            n = Integer.parseInt(br.readLine());
+            sb.append(solve(arr, n, 0)).append('\n');
+        }
+
+        System.out.println(sb);
+    }
+
+    private static int solve(int[] arr, int n, int sum) {
+        if (sum > n) {
+            return 0;
+        }
+        else if (sum == n) {
+            return 1;
+        }
+
+        int curSumData = 0;
+        for(int i=0; i<arr.length; i++) {
+            curSumData += solve(arr, n, sum+arr[i]);
+        }
+        return curSumData;
+    }
+}
+```
+
 ---
 ## 이친수 (2193번)
 https://www.acmicpc.net/problem/2193
