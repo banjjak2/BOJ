@@ -1575,3 +1575,59 @@ public class Main {
 }
 ```
 ---
+## 1 (4375번)
+https://www.acmicpc.net/problem/4375
+
+### 이전풀이
+- `BigInteger`를 이용해 풀었으나 성능이 좋지 않았다.
+- [이전풀이](https://www.acmicpc.net/source/36865277)
+
+### 문제설명
+- 1로만 이루어진 n의 배수를 찾는다는 것은 1로만 이루어진 숫자 `예)111`를 `n`으로 나눴을 때 나누어 떨어지는가? 를 묻는 것이다.
+- 예제 출력의 3은 `111`이 되고 6은 `111111`, ... 이 된다는 뜻이 된다.
+
+### 풀이방법
+- `Modular` 연산을 이용해 풀 수 있는 문제이다.
+  - `(A+B)%C는 ((A%C) + (B%C))%C와 같다`
+  - `(A×B)%C는 ((A%C) × (B%C))%C와 같다`
+- 위 두가지 조건을 이용해 문제를 풀 수 있다.
+- (추가예정)
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        String str = "";
+        StringBuilder sb = new StringBuilder();
+
+        int n = 0;
+        int remainder = 1;
+        int count = 1;
+        while ((str = br.readLine()) != null) {
+            n = Integer.parseInt(str);
+            if (n == 1) {
+                System.out.println(1);
+                continue;
+            }
+            
+            count = 1;
+            remainder = 1;
+
+            while (remainder != 0) {
+                remainder = (10 * remainder + 1) % n;
+                count++;
+            }
+
+            sb.append(count).append('\n');
+        }
+
+        System.out.println(sb);
+    }
+}
+```
+---
