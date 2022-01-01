@@ -51,6 +51,7 @@
 - [점수계산 (2506)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_3#%EC%A0%90%EC%88%98%EA%B3%84%EC%82%B0-2506%EB%B2%88)
 - [네 수 (10824)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_3#%EB%84%A4-%EC%88%98-10824%EB%B2%88)
 - [영수증 (5565)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_3#영수증-5565번)
+- [지능형 기차 (2455)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_3#지능형-기차-2455번)
 
 ---
 
