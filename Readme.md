@@ -24,6 +24,7 @@
 - [2진수 8진수 (1373)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_2#2%EC%A7%84%EC%88%98-8%EC%A7%84%EC%88%98-1373%EB%B2%88)
 - [이름 궁합 (15312)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_2#%EC%9D%B4%EB%A6%84-%EA%B6%81%ED%95%A9-15312%EB%B2%88)
 - [일곱 난쟁이 (2309)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_2#%EC%9D%BC%EA%B3%B1-%EB%82%9C%EC%9F%81%EC%9D%B4-2309%EB%B2%88)
+- [KMP는 왜 KMP일까? (2902)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_2#KMP는-왜-KMP일까-2902번)
 
 ---
 
