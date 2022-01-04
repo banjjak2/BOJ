@@ -53,6 +53,7 @@
 - [네 수 (10824)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_3#%EB%84%A4-%EC%88%98-10824%EB%B2%88)
 - [영수증 (5565)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_3#영수증-5565번)
 - [지능형 기차 (2455)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_3#지능형-기차-2455번)
+- [상근이의 친구들 (5717)](https://github.com/banjjak2/BOJ/tree/master/src/Bronze_3#상근이의-친구들-5717번)
 
 ---
 
