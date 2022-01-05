@@ -190,6 +190,7 @@
 - [차이를 최대로 (10819)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#차이를-최대로-10819번)
 - [외판원 순회 2 (10971)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#외판원-순회-2-10971번)
 - [로또 (6603)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#로또-6603번)
+- [약수의 합 2 (17427)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#약수의-합-2-17427번)
 
 ---
 
