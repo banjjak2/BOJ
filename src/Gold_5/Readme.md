@@ -471,3 +471,51 @@ public class Main {
 }
 ```
 ---
+### 약수의 합 (17425번)
+https://www.acmicpc.net/problem/17425
+
+### 헤맸던 점
+- [약수의 합 2](https://www.acmicpc.net/problem/17427) 와 똑같은 문제로 판단하고 풀었는데 시간초과가 발생했다.
+- `에라토스테네스의 체`처럼 
+
+### 풀이방법
+- 단순하게 생각하면 쉬운 문제였다.
+- `1~N`까지 약수들의 합을 배열에 미리 계산한 후 매 케이스마다 해당 인덱스의 값을 반환하면 된다.
+- 처음에 `1~20`까지 약수들을 모두 써본 후 어떤 규칙이 있는지 확인해보았다.
+  - `1은 모든 약수`에 들어있고, `2는 2의 배수`에, `3은 3의 배수`에 들어있었음을 알 수 있었다.
+- 위의 방식을 이용하여 미리 `1,000,000`개의 배열을 선언해준 후에 각 배수의 인덱스에 값을 더해주는 방식으로 구현하였다.
+- 문제에서는 `1~N`까지 약수의 합을 말했으므로 각 배수를 모두 구했을 때마다 이전값과 더해주는 방식을 취하였다.
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main {
+    private static final int MAX_VALUE = 1_000_000;
+
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        long[] saved = new long[MAX_VALUE+1];
+
+        for(int i=1; i<=MAX_VALUE; i++) {
+            for(int j=i; j<=MAX_VALUE; j+=i) {
+                saved[j] += i;
+            }
+            saved[i] += saved[i-1];
+        }
+
+
+        int T = Integer.parseInt(br.readLine());
+        int N = 0;
+        StringBuilder sb = new StringBuilder();
+        while (T-- > 0) {
+            N = Integer.parseInt(br.readLine());
+            sb.append(saved[N]).append('\n');
+        }
+
+        System.out.println(sb);
+    }
+}
+```
+---

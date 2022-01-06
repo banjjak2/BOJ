@@ -280,5 +280,5 @@
 - [리모컨 (1107)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#%EB%A6%AC%EB%AA%A8%EC%BB%A8-1107%EB%B2%88)
 - [테트로미노 (14500)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#%ED%85%8C%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8-14500%EB%B2%88)
 - [암호 만들기 (1759)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#암호-만들기-1759번)
-
+- [약수의 합 (17425)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#약수의-합-17425번)
 ---
