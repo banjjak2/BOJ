@@ -192,6 +192,7 @@
 - [외판원 순회 2 (10971)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#외판원-순회-2-10971번)
 - [로또 (6603)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#로또-6603번)
 - [약수의 합 2 (17427)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#약수의-합-2-17427번)
+- [부등호 (2529)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#부등호-2529번)
 
 ---
 
