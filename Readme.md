@@ -223,6 +223,7 @@
 - [이전 순열 (10973)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#이전-순열-10973번)
 - [모든 순열 (10974)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#모든-순열-10974번)
 - [1 (4375)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#1-4375번)
+- [스타트와 링크 (14889)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#스타트와-링크-14889번)
 
 ---
 
