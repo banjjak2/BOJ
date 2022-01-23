@@ -286,3 +286,5 @@
 - [암호 만들기 (1759)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#암호-만들기-1759번)
 - [약수의 합 (17425)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#약수의-합-17425번)
 ---
+
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fbanjjak2%2FBOJ&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
