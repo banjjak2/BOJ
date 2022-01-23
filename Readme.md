@@ -224,6 +224,7 @@
 - [모든 순열 (10974)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#모든-순열-10974번)
 - [1 (4375)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#1-4375번)
 - [스타트와 링크 (14889)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#스타트와-링크-14889번)
+- [두 수의 합 (3273)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#두-수의-합-3273번)
 
 ---
 
