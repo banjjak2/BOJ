@@ -252,6 +252,7 @@
 - [파스칼 삼각형 (15489)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_5#%ED%8C%8C%EC%8A%A4%EC%B9%BC-%EC%82%BC%EA%B0%81%ED%98%95-15489%EB%B2%88)
 - [날짜 계산 (1476)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_5#%EB%82%A0%EC%A7%9C-%EA%B3%84%EC%82%B0-1476%EB%B2%88)
 - [약수 (1037)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_5#약수-1037번)
+- [방 번호 (1475)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_5#방-번호-1475번)
 
 ---
 
