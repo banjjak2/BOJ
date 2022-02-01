@@ -173,6 +173,7 @@
 - [타일 채우기 (2133)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#%ED%83%80%EC%9D%BC-%EC%B1%84%EC%9A%B0%EA%B8%B0-2133%EB%B2%88)
 - [카잉 달력 (6064)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#%EC%B9%B4%EC%9E%89-%EB%8B%AC%EB%A0%A5-6064%EB%B2%88)
 - [그림 (1926)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#그림-1926번)
+- [미로 탐색 (2178)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#미로-탐색-2178번)
 
 ---
 
@@ -290,6 +291,7 @@
 - [테트로미노 (14500)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#%ED%85%8C%ED%8A%B8%EB%A1%9C%EB%AF%B8%EB%85%B8-14500%EB%B2%88)
 - [암호 만들기 (1759)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#암호-만들기-1759번)
 - [약수의 합 (17425)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#약수의-합-17425번)
+
 ---
 
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fbanjjak2%2FBOJ&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
