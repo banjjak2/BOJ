@@ -174,6 +174,7 @@
 - [카잉 달력 (6064)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#%EC%B9%B4%EC%9E%89-%EB%8B%AC%EB%A0%A5-6064%EB%B2%88)
 - [그림 (1926)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#그림-1926번)
 - [미로 탐색 (2178)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#미로-탐색-2178번)
+- [숨바꼭질 (1697)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#숨바꼭질-1697번)
 
 ---
 
