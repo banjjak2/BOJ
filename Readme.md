@@ -296,6 +296,7 @@
 - [약수의 합 (17425)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#약수의-합-17425번)
 - [토마토 (7576)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#토마토-7576번)
 - [적록색약 (10026)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#적록색약-10026번)
+- [토마토 (7569)](https://github.com/banjjak2/BOJ/tree/master/src/Gold_5#토마토-7569번)
 
 ---
 
