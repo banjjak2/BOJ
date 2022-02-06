@@ -176,6 +176,7 @@
 - [미로 탐색 (2178)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#미로-탐색-2178번)
 - [숨바꼭질 (1697)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#숨바꼭질-1697번)
 - [하노이 탑 이동 순서 (11729)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#하노이-탑-이동-순서-11729번)
+- [Z (1074)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#Z-1074번)
 
 ---
 
