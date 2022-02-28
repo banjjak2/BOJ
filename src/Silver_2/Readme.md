@@ -1301,3 +1301,88 @@ public class Main {
 }
 ```
 ---
+
+## 종이의 개수 (1780번)
+https://www.acmicpc.net/problem/1780
+
+### 풀이방법
+- 재귀문제
+- 전달받은 n의 크기만큼 반복해서 전체가 같은 숫자인지 판별한다.
+  - 같은 숫자가 아니라면 9개씩 자른다고 했으므로 검사할 n의 개수는 n/3씩 줄어든다.
+    - 최악의 경우 n이 1이 될때까지 반복한다.
+    ```text
+    0 1 0
+    0 0 1
+    1 0 0
+    ```
+    - 위의 경우 하나의 종이에 동일한 숫자가 없으므로 한칸씩 종이를 자르게 되고, 그렇게 되면 종이에 채워진 수가 1개이므로 해당하는 값을 더해준다.
+
+- 행렬에서 다음 검사할 x, y를 결정한다.
+  - 9개로 자르고 3^n이므로 아래와 같이 결정할 수 있다.
+  ```text
+  x = x + (n/3) * (0, 1, 2)
+  y = y + (n/3) * (0, 1, 2)
+  0, 1, 2는 내 위치, 다음위치, 다다음위치를 가리킴
+  ```
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    static int N = 0;
+    static int[][] matrix = null;
+    static int countOfPositive = 0;
+    static int countOfNegative = 0;
+    static int countOfZero = 0;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        N = Integer.parseInt(br.readLine());
+        matrix = new int[N][N];
+        StringTokenizer st = null;
+        for (int i=0; i<N; i++) {
+            st = new StringTokenizer(br.readLine());
+            for (int j=0; j<N; j++) {
+                matrix[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
+
+        recursive(0, 0, N);
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(countOfNegative).append('\n');
+        sb.append(countOfZero).append('\n');
+        sb.append(countOfPositive).append('\n');
+        System.out.println(sb);
+    }
+
+    private static void recursive(int x, int y, int n) {
+        if (checkMatrix(x, y, n)) {
+            if (matrix[y][x] == 1) countOfPositive++;
+            else if (matrix[y][x] == 0) countOfZero++;
+            else if (matrix[y][x] == -1) countOfNegative++;
+            return;
+        }
+
+        for (int i=0; i<3; i++) {
+            for (int j=0; j<3; j++) {
+                recursive(x + (n/3) * j, y + (n/3) * i, n/3);
+            }
+        }
+    }
+
+    private static boolean checkMatrix(int x, int y, int n) {
+        int tmpData = matrix[y][x];
+        for(int i=y; i<n + y; i++) {
+            for (int j=x; j<n + x; j++) {
+                if (tmpData != matrix[i][j]) return false;
+            }
+        }
+
+        return true;
+    }
+}
+```
+---

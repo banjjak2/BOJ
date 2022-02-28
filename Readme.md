@@ -201,6 +201,7 @@
 - [부등호 (2529)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#부등호-2529번)
 - [유기농 배추 (1012)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#유기농-배추-1012번)
 - [나이트의 이동 (7562)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#나이트의-이동-7562번)
+- [종이의 개수 (1780)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#종이의-개수-1780번)
 
 ---
 
