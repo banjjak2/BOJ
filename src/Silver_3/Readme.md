@@ -1848,3 +1848,68 @@ public class Main {
 }
 ```
 ---
+
+## 색종이 만들기 (2630번)
+https://www.acmicpc.net/problem/2630
+
+### 풀이방법
+- [종이의 개수 (1780)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_2#종이의-개수-1780번)와 동일한 문제이다.
+
+```java
+import java.io.IOException;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    static int N = 0;
+    static int[][] matrix = null;
+    static int countOfWhite = 0;
+    static int countOfBlue = 0;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        N = Integer.parseInt(br.readLine());
+        matrix = new int[N][N];
+        StringTokenizer st = null;
+        for (int i=0; i<N; i++) {
+            st = new StringTokenizer(br.readLine());
+            for (int j=0; j<N; j++) {
+                matrix[i][j] = Integer.parseInt(st.nextToken());
+            }
+        }
+
+        recursive(0, 0, N);
+
+        StringBuilder sb = new StringBuilder();
+        sb.append(countOfWhite).append('\n');
+        sb.append(countOfBlue).append('\n');
+        System.out.println(sb);
+    }
+
+    private static void recursive(int x, int y, int n) {
+        if (checkMatrix(x, y, n)) {
+            if (matrix[y][x] == 1) countOfBlue++;
+            else if (matrix[y][x] == 0) countOfWhite++;
+            return;
+        }
+
+        for (int i=0; i<2; i++) {
+            for (int j=0; j<2; j++) {
+                recursive(x + (n/2) * j, y + (n/2) * i, n/2);
+            }
+        }
+    }
+
+    private static boolean checkMatrix(int x, int y, int n) {
+        int tmpData = matrix[y][x];
+        for(int i=y; i<n + y; i++) {
+            for (int j=x; j<n + x; j++) {
+                if (tmpData != matrix[i][j]) return false;
+            }
+        }
+
+        return true;
+    }
+}
+```
+---

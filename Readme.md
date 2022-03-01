@@ -235,6 +235,7 @@
 - [스타트와 링크 (14889)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#스타트와-링크-14889번)
 - [두 수의 합 (3273)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#두-수의-합-3273번)
 - [키로거 (5397)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#키로거-5397번)
+- [색종이 만들기 (2630)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_3#색종이-만들기-2630번)
 
 ---
 
