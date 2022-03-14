@@ -1386,3 +1386,112 @@ public class Main {
 }
 ```
 ---
+
+## 부분수열의 합 (1182번)
+https://www.acmicpc.net/problem/1182
+
+### 풀이방법 (1)
+- `visited` 배열을 두어 방문했는지 여부를 확인한 후 방문했다면 건너뛰고 그렇지 않다면 표시한 후 다시 호출
+- 중복이 되면 안되므로 `현재위치+1`로 넘김
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    static int n = 0;
+    static int s = 0;
+    static int[] map;
+    static boolean[] visited;
+    static int count = 0;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        n = Integer.parseInt(st.nextToken());
+        s = Integer.parseInt(st.nextToken());
+
+        st = new StringTokenizer(br.readLine());
+        map = new int[n];
+        visited = new boolean[n];
+
+        for (int i=0; i<n; i++) {
+            map[i] = Integer.parseInt(st.nextToken());
+        }
+
+        backtracking(0, 0);
+        if (s == 0) {
+            count--;
+        }
+        System.out.println(count);
+    }
+
+    private static void backtracking(int curPos, int result) {
+        if (result == s) {
+            count++;
+        }
+
+        for (int i=curPos; i<n; i++) {
+            if (!visited[i]) {
+                visited[i] = true;
+                backtracking(i+1, result+map[i]);
+                visited[i] = false;
+            }
+        }
+    }
+}
+```
+
+### 풀이방법 (2)
+- 현재값을 더한 결괏값과 더하지 않은 것으로 구분해서 구현
+
+```java
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main {
+    static int n = 0;
+    static int s = 0;
+    static int[] map;
+    static boolean[] visited;
+    static int count = 0;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+
+        n = Integer.parseInt(st.nextToken());
+        s = Integer.parseInt(st.nextToken());
+
+        st = new StringTokenizer(br.readLine());
+        map = new int[n];
+        visited = new boolean[n];
+
+        for (int i=0; i<n; i++) {
+            map[i] = Integer.parseInt(st.nextToken());
+        }
+
+        backtracking(0, 0);
+        if (s == 0) {
+            count--;
+        }
+        System.out.println(count);
+    }
+
+    private static void backtracking(int curPos, int result) {
+        if (curPos > n-1) {
+            if (result == s) {
+                count++;
+            }
+            return;
+        }
+
+        backtracking(curPos+1, result+map[curPos]);
+        backtracking(curPos+1, result);
+    }
+}
+```
+---
