@@ -179,6 +179,7 @@
 - [Z (1074)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#Z-1074번)
 - [쿼드트리 (1992)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#쿼드트리-1992번)
 - [계란으로 계란치기 (16987)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#계란으로-계란치기-16987번)
+- [안전 영역 (2468)](https://github.com/banjjak2/BOJ/tree/master/src/Silver_1#안전-영역-2468번)
 
 ---
 
